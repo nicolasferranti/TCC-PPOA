@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<!DOCTYPE similarityCalc SYSTEM "validacaoXML.dtd"> 
+<similarityCalc> 
+  <container name="Funcoes principais">
+    <function weight="0.5">
+       <class>br.ufjf.ontology.gnosis.similarity.structure.ConceptNameSimilarity</class>
+       <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.EqualsEditDistance</strategy> 
+       <penalty>0.0</penalty> 
+    </function>
+    <container name="Funcoes Secundarias" weight="0.5"> 
+      <function weight="0.3">
+        <class>br.ufjf.ontology.gnosis.similarity.structure.DirectSuperClassSimilarity</class>
+        <combination>br.ufjf.ontology.gnosis.similarity.combination.DeepCombination</combination>
+        <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.EqualsEditDistance</strategy>
+        <penalty>0.0</penalty> 
+      </function>
+      <function weight="0.3">
+        <class>br.ufjf.ontology.gnosis.similarity.structure.DirectSubClassSimilarity</class>
+        <combination>br.ufjf.ontology.gnosis.similarity.combination.DeepCombination</combination>
+        <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.EqualsEditDistance</strategy>
+        <penalty>0.0</penalty> 
+      </function>
+      <function weight="0.1">
+        <class>br.ufjf.ontology.gnosis.similarity.structure.DirectIndividualbyNameSimilarity</class>
+        <combination>br.ufjf.ontology.gnosis.similarity.combination.DeepCombination</combination>
+        <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.EqualsEditDistance</strategy>
+        <penalty>0.0</penalty> 
+      </function>
+      <container name="Funcoes Propriedades" weight="0.3">
+        <function weight="0.2">
+          <class>br.ufjf.ontology.gnosis.similarity.structure.DirectDataTypePropertybyRangeSimilarity</class>
+          <penalty>0.0</penalty> 
+        </function> 
+        <function weight="0.3">
+          <class>br.ufjf.ontology.gnosis.similarity.structure.DirectDataTypePropertybyNameSimilarity</class>
+          <combination>br.ufjf.ontology.gnosis.similarity.combination.DeepCombination</combination>
+          <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.DamerauLevenshteinEditDistance</strategy>
+          <penalty>0.0</penalty> 
+        </function>
+        <function weight="0.2">
+          <class>br.ufjf.ontology.gnosis.similarity.structure.DirectObjectPropertybyRangeSimilarity</class>
+          <combination>br.ufjf.ontology.gnosis.similarity.combination.DeepCombination</combination>
+          <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.EqualsEditDistance</strategy>
+          <penalty>0.0</penalty> 
+        </function>
+        <function weight="0.3">
+          <class>br.ufjf.ontology.gnosis.similarity.structure.DirectObjectPropertybyNameSimilarity</class>
+          <combination>br.ufjf.ontology.gnosis.similarity.combination.DeepCombination</combination>
+          <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.EqualsEditDistance</strategy>
+          <penalty>0.0</penalty> 
+        </function>
+      </container> 
+    </container>
+</container> 
+<ontologies> 
+	<ontology id="Celo.owl">
+	</ontology> 
+	<ontology id="CeloModEstrutura.owl">
+	</ontology> 
+</ontologies> 
+</similarityCalc>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE similarityCalc SYSTEM "validacaoXML.dtd">
+<similarityCalc>
+  <container name="Funcoes principais">
+   <function weight="1.0">
+    <class>br.ufjf.ontology.gnosis.similarity.structure.ConceptNameSimilarity
+    </class>
+    <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.LevenshteinEditDistance    
+    </strategy>
+    <penalty>1.0</penalty>
+  </function>
+ </container>
+ <ontologies>
+  <ontology id="Ontologia1.owl"></ontology>
+  <ontology id="Ontologia2.owl"></ontology>
+ </ontologies>
+</similarityCalc>

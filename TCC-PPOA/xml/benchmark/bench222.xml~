@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<similarityCalc> 
+    <container name="FuncoesPrincipais">
+        <function weight="0.3">
+            <class>br.ufjf.ontology.gnosis.similarity.structure.ConceptNameSimilarity</class>
+            <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.LevenshteinEditDistance</strategy> 
+        </function>
+        <function weight="0.3">
+            <class>br.ufjf.ontology.gnosis.similarity.structure.DirectIndividualSimilarity</class>
+            <combination>br.ufjf.ontology.gnosis.similarity.combination.FirstMatchCombination</combination>
+            <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.LevenshteinEditDistance</strategy>
+            <penalty>0.1</penalty> 
+        </function>
+        <function weight="0.0">
+            <class>br.ufjf.ontology.gnosis.similarity.structure.CommentTokenSimilarity</class>
+            <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.TokenizerEditDistance</strategy>
+        </function>
+        <container name="FuncoesHierarquia" weight="0.2">
+            <function weight="0.5">
+                <class>br.ufjf.ontology.gnosis.similarity.structure.DirectSuperClassSimilarity</class>
+                <combination>br.ufjf.ontology.gnosis.similarity.combination.FirstMatchCombination</combination>
+                <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.LevenshteinEditDistance</strategy>
+                <penalty>0.1</penalty> 
+            </function>
+            <function weight="0.5">
+                <class>br.ufjf.ontology.gnosis.similarity.structure.DirectSubClassSimilarity</class>
+                <combination>br.ufjf.ontology.gnosis.similarity.combination.FirstMatchCombination</combination>
+                <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.LevenshteinEditDistance</strategy>
+                <penalty>0.0</penalty> 
+            </function>
+        </container> 
+        <container name="FuncoesPropriedades" weight="0.2">
+            <function weight="0.6">
+                 <class>br.ufjf.ontology.gnosis.similarity.structure.DirectPropertybyRangeDomainSimilarity</class>
+                 <combination>br.ufjf.ontology.gnosis.similarity.combination.FirstMatchCombination</combination>
+                 <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.LevenshteinEditDistance</strategy>
+                 <penalty>0.1</penalty> 
+            </function>
+            <function weight="0.4">
+                 <class>br.ufjf.ontology.gnosis.similarity.structure.DirectPropertybyNameSimilarity</class>
+                 <combination>br.ufjf.ontology.gnosis.similarity.combination.FirstMatchCombination</combination>
+                 <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.LevenshteinEditDistance</strategy>
+                 <penalty>0.1</penalty> 
+            </function>
+        </container>
+    </container> 
+    <ontologies> 
+        <ontology id="/home/jairo/Dropbox/documentos/Acadêmicos/Doutorado/Fase_final/Avaliacao/Teste/benchmarks/101/onto.rdf"></ontology> 
+        <ontology id="/home/jairo/Dropbox/documentos/Acadêmicos/Doutorado/Fase_final/Avaliacao/Teste/benchmarks/221/onto.rdf"></ontology> 
+	<!-- If pre-alignment element is filled, thus the weights above will not be used by application -->
+        <pre-alignment>xml/benchmark/prealign221.rdf</pre-alignment>
+    </ontologies> 
+</similarityCalc>

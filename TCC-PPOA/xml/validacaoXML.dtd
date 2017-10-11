@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT similarityCalc (ontologies|container)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT container (container|function)*>
+<!ATTLIST container
+    weight CDATA #IMPLIED
+    name CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT function (penalty|strategy|combination|class)*>
+<!ATTLIST function
+    weight CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT class (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT combination (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT strategy (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT penalty (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT ontologies (ontology)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT ontology EMPTY>
+<!ATTLIST ontology
+    path CDATA #IMPLIED
+    id CDATA #IMPLIED
+  >

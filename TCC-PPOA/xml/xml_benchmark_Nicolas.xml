@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<similarityCalc> 
+    <container name="Funcoes principais">
+        <function weight="0.5">
+            <class>similarity.structure.ConceptNameSimilarity</class>
+            <strategy>similarity.editdistance.DamerauLevenshteinEditDistance</strategy> 
+        </function>
+        <container name="Funcoes Secundarias" weight="0.5">
+            <function weight="0.4">
+                <class>similarity.structure.DirectSuperClassSimilarity</class>
+                <combination>similarity.combination.DeepCombination</combination>
+                <strategy>similarity.editdistance.DamerauLevenshteinEditDistance</strategy>
+                <penalty>0.0</penalty> 
+            </function>
+            <function weight="0.4">
+                <class>similarity.structure.DirectSubClassSimilarity</class>
+                <combination>similarity.combination.DeepCombination</combination>
+                <strategy>similarity.editdistance.DamerauLevenshteinEditDistance</strategy>
+                <penalty>0.0</penalty> 
+            </function>
+            <function weight="0.2">
+                <class>similarity.structure.DirectIndividualbyNameSimilarity</class>
+                <combination>similarity.combination.DeepCombination</combination>
+                <strategy>similarity.editdistance.DamerauLevenshteinEditDistance</strategy>
+                <penalty>0.0</penalty> 
+            </function>
+        </container> 
+    </container> 
+    <ontologies> 
+        <ontology id="xml/onto.rdf"></ontology> 
+        <ontology id="xml/onto2.rdf"></ontology> 
+	<!-- If pre-alignment element is filled, thus the weights above will not be used by application -->
+        <pre-alignment>xml/prealign101.rdf</pre-alignment>
+    </ontologies> 
+</similarityCalc>

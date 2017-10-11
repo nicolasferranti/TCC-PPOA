@@ -1,0 +1,1382 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns="http://www.owl-ontologies.com/CeloModTermoEstrutura.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xml:base="http://www.owl-ontologies.com/CeloModTermoEstrutura.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="GatingProcess">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="CellProcess"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ModeloObjeto">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ModeloBase"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="LocalVariavel">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ComponentVariable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ModelService">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ModeloBase"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SIDerivedUnit">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="PadraoUnidade"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="DefinedUnit"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="SIBaseUnit"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="Modelo">
+    <rdfs:subClassOf rdf:resource="#ModeloObjeto"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ModelParameterOut">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ModelParameter"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ModeloEntidade">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Celo"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Variavel">
+    <rdfs:subClassOf rdf:resource="#ModeloObjeto"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Unidade"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasVariableUnit"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#DefinedUnit">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#SIBaseUnit"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#SIDerivedUnit"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Unidade"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DominioEntidade">
+    <rdfs:subClassOf rdf:resource="#Celo"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ModeloProcesso">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ModeloBase"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AlgebricaVariavel">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ModelVariable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DependentVariable">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ModelVariable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Nucleotideo">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ChemicalCompound"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#CellProcess">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="CelulaElemento"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MembranaTransporte">
+    <rdfs:subClassOf rdf:resource="#CellProcess"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CardiacoMiocitos">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="CelulaTipo"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Equation">
+    <rdfs:subClassOf rdf:resource="#ModeloObjeto"/>
+  </owl:Class>
+  <owl:Class rdf:ID="IonChannelGate">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue>
+          <CellPart rdf:ID="Gate">
+            <isContainedIn>
+              <CellPart rdf:ID="Channel">
+                <isContainedIn>
+                  <CellPart rdf:ID="Membrana">
+                    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >membrana</temNome>
+                    <contem>
+                      <CellPart rdf:ID="Exchanger">
+                        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >exchanger</temNome>
+                        <isContainedIn rdf:resource="#Membrana"/>
+                      </CellPart>
+                    </contem>
+                    <contem rdf:resource="#Channel"/>
+                    <contem>
+                      <CellPart rdf:ID="Pump">
+                        <isContainedIn rdf:resource="#Membrana"/>
+                        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >pump</temNome>
+                      </CellPart>
+                    </contem>
+                    <isContainedIn>
+                      <CellSpace rdf:ID="ExtraCelularEspaco">
+                        <contem rdf:resource="#Membrana"/>
+                      </CellSpace>
+                    </isContainedIn>
+                  </CellPart>
+                </isContainedIn>
+                <contem rdf:resource="#Gate"/>
+                <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >ionchannel</temNome>
+                <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >channel</temNome>
+              </CellPart>
+            </isContainedIn>
+            <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >gate</temNome>
+          </CellPart>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasDomainEntity"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="DomainVariable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="InterfaceVariable">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ComponentVariable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ModeloPerfil">
+    <rdfs:subClassOf rdf:resource="#ModeloEntidade"/>
+  </owl:Class>
+  <owl:Class rdf:ID="BiologicaEntidade">
+    <rdfs:subClassOf rdf:resource="#DominioEntidade"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Quantidade">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="SIEntity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#CelulaElemento">
+    <rdfs:subClassOf rdf:resource="#BiologicaEntidade"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="contem"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="#CelulaElemento"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#CelulaElemento"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="isContainedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Unidade">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#SIEntity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="CellStructure">
+    <rdfs:subClassOf rdf:resource="#CelulaElemento"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CellMLModel">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ModeloBase"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#ChemicalCompound">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="QuimicaEntidade"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="NonLinearModel">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MathModelLinearityType"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="LinearModelo"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="PolarizacaoProcesso">
+    <rdfs:subClassOf rdf:resource="#CellProcess"/>
+  </owl:Class>
+  <owl:Class rdf:ID="QuimicoObjeto">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#QuimicaEntidade"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="StochasticModel">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MathModelDeterministicType"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="DeterministicoModelo"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#PadraoUnidade">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="UserDefinedUnit"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#SIEntity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#DomainVariable">
+    <rdfs:subClassOf rdf:resource="#Variavel"/>
+  </owl:Class>
+  <owl:Class rdf:ID="BaseQuantidade">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="DerivedQuantity"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="UserDefinedQuantity"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#Quantidade"/>
+  </owl:Class>
+  <owl:Class rdf:about="#CelulaTipo">
+    <rdfs:subClassOf rdf:resource="#BiologicaEntidade"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CellSpace">
+    <rdfs:subClassOf rdf:resource="#CellStructure"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MathematicalModelType">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ModeloTipo"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="BiologicalModelType">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ModeloTipo"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="InternalComponent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Componente"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DiscretoModelo">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MathModelDiscretizationType"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ContinuousModel"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="Elemento">
+    <rdfs:subClassOf rdf:resource="#ModeloObjeto"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ExternalComponent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Componente"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#MathModelDiscretizationType">
+    <rdfs:subClassOf rdf:resource="#MathematicalModelType"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ComponentVariable">
+    <rdfs:subClassOf rdf:resource="#Variavel"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ModelInterface">
+    <rdfs:subClassOf rdf:resource="#ModeloProcesso"/>
+  </owl:Class>
+  <owl:Class rdf:ID="FisiologicoModelo">
+    <rdfs:subClassOf rdf:resource="#BiologicalModelType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CellPart">
+    <rdfs:subClassOf rdf:resource="#CellStructure"/>
+  </owl:Class>
+  <owl:Class rdf:about="#MathModelLinearityType">
+    <rdfs:subClassOf rdf:resource="#MathematicalModelType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Compartment">
+    <rdfs:subClassOf rdf:resource="#ModeloObjeto"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Compartment"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="modelCompartment"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="TimeDependentModel">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="StationaryModel"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MathModelTimeDependencyType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#ModeloTipo">
+    <rdfs:subClassOf rdf:resource="#Celo"/>
+  </owl:Class>
+  <owl:Class rdf:about="#UserDefinedQuantity">
+    <owl:disjointWith rdf:resource="#BaseQuantidade"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#DerivedQuantity"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#SIEntity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="IndependenteVariavel">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ModelVariable"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#ModelVariable">
+    <rdfs:subClassOf rdf:resource="#Variavel"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SodiumIonChannel">
+    <rdfs:subClassOf rdf:resource="#DomainVariable"/>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#hasDomainEntity"/>
+            </owl:onProperty>
+            <owl:hasValue>
+              <QuimicoElemento rdf:ID="Sodium">
+                <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >sodium</temNome>
+                <hasChemicalSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Na</hasChemicalSymbol>
+              </QuimicoElemento>
+            </owl:hasValue>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:hasValue rdf:resource="#Channel"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#hasDomainEntity"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="temMedidas"/>
+            </owl:onProperty>
+            <owl:hasValue>
+              <BaseQuantidade rdf:ID="EletricCurrent">
+                <isMeasuredBy>
+                  <SIBaseUnit rdf:ID="ampere">
+                    <temSimbolo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >A</temSimbolo>
+                    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >ampere</temNome>
+                    <measures rdf:resource="#EletricCurrent"/>
+                  </SIBaseUnit>
+                </isMeasuredBy>
+                <isMeasuredBy>
+                  <UserDefinedUnit rdf:ID="nanoA">
+                    <measures rdf:resource="#EletricCurrent"/>
+                    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >nanoA</temNome>
+                  </UserDefinedUnit>
+                </isMeasuredBy>
+                <isMeasuredBy>
+                  <UserDefinedUnit rdf:ID="picoA">
+                    <measures rdf:resource="#EletricCurrent"/>
+                    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >picoA</temNome>
+                  </UserDefinedUnit>
+                </isMeasuredBy>
+                <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >current</temNome>
+                <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >i</temNome>
+                <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >eletriccurrent</temNome>
+              </BaseQuantidade>
+            </owl:hasValue>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="ParameterVariable">
+    <rdfs:subClassOf rdf:resource="#ModelVariable"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ModeloBase">
+    <rdfs:subClassOf rdf:resource="#ModeloEntidade"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ElectrophysiologicalModel">
+    <rdfs:subClassOf rdf:resource="#FisiologicoModelo"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ModelParameter">
+    <rdfs:subClassOf rdf:resource="#ModeloProcesso"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Componente">
+    <rdfs:subClassOf rdf:resource="#ModeloObjeto"/>
+  </owl:Class>
+  <owl:Class rdf:about="#DeterministicoModelo">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MathModelDeterministicType"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#StochasticModel"/>
+  </owl:Class>
+  <owl:Class rdf:about="#SIEntity">
+    <rdfs:subClassOf rdf:resource="#Celo"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Proteina">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="BioChemicalEntity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ModelParameterIn">
+    <rdfs:subClassOf rdf:resource="#ModelParameter"/>
+  </owl:Class>
+  <owl:Class rdf:about="#UserDefinedUnit">
+    <rdfs:subClassOf rdf:resource="#Unidade"/>
+    <owl:disjointWith rdf:resource="#PadraoUnidade"/>
+  </owl:Class>
+  <owl:Class rdf:about="#SIBaseUnit">
+    <rdfs:subClassOf rdf:resource="#PadraoUnidade"/>
+    <owl:disjointWith rdf:resource="#DefinedUnit"/>
+    <owl:disjointWith rdf:resource="#SIDerivedUnit"/>
+  </owl:Class>
+  <owl:Class rdf:about="#BioChemicalEntity">
+    <rdfs:subClassOf rdf:resource="#DominioEntidade"/>
+  </owl:Class>
+  <owl:Class rdf:about="#MathModelDeterministicType">
+    <rdfs:subClassOf rdf:resource="#MathematicalModelType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Miocitos">
+    <rdfs:subClassOf rdf:resource="#CelulaTipo"/>
+  </owl:Class>
+  <owl:Class rdf:about="#LinearModelo">
+    <rdfs:subClassOf rdf:resource="#MathModelLinearityType"/>
+    <owl:disjointWith rdf:resource="#NonLinearModel"/>
+  </owl:Class>
+  <owl:Class rdf:about="#DerivedQuantity">
+    <rdfs:subClassOf rdf:resource="#Quantidade"/>
+    <owl:disjointWith rdf:resource="#BaseQuantidade"/>
+    <owl:disjointWith rdf:resource="#UserDefinedQuantity"/>
+  </owl:Class>
+  <owl:Class rdf:ID="AcaoPotencial">
+    <rdfs:subClassOf rdf:resource="#DomainVariable"/>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#hasDomainEntity"/>
+            </owl:onProperty>
+            <owl:hasValue rdf:resource="#Membrana"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#temMedidas"/>
+            </owl:onProperty>
+            <owl:hasValue>
+              <DerivedQuantity rdf:ID="Voltage">
+                <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >E</temNome>
+                <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >potencial</temNome>
+                <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >voltage</temNome>
+                <isMeasuredBy>
+                  <SIDerivedUnit rdf:ID="volt">
+                    <measures rdf:resource="#Voltage"/>
+                    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >volt</temNome>
+                    <temSimbolo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >V</temSimbolo>
+                  </SIDerivedUnit>
+                </isMeasuredBy>
+                <isMeasuredBy>
+                  <UserDefinedUnit rdf:ID="mV">
+                    <measures rdf:resource="#Voltage"/>
+                  </UserDefinedUnit>
+                </isMeasuredBy>
+              </DerivedQuantity>
+            </owl:hasValue>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#MathModelTimeDependencyType">
+    <rdfs:subClassOf rdf:resource="#MathematicalModelType"/>
+  </owl:Class>
+  <owl:Class rdf:about="#QuimicaEntidade">
+    <rdfs:subClassOf rdf:resource="#DominioEntidade"/>
+  </owl:Class>
+  <owl:Class rdf:ID="PotassiumIonChannel">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#hasDomainEntity"/>
+            </owl:onProperty>
+            <owl:hasValue>
+              <QuimicoElemento rdf:ID="Potassium">
+                <hasChemicalSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >K</hasChemicalSymbol>
+                <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >potassium</temNome>
+              </QuimicoElemento>
+            </owl:hasValue>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#hasDomainEntity"/>
+            </owl:onProperty>
+            <owl:hasValue rdf:resource="#Channel"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:hasValue rdf:resource="#EletricCurrent"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#temMedidas"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="#DomainVariable"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ContinuousModel">
+    <owl:disjointWith rdf:resource="#DiscretoModelo"/>
+    <rdfs:subClassOf rdf:resource="#MathModelDiscretizationType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="QuimicoElemento">
+    <rdfs:subClassOf rdf:resource="#ChemicalCompound"/>
+  </owl:Class>
+  <owl:Class rdf:about="#StationaryModel">
+    <rdfs:subClassOf rdf:resource="#MathModelTimeDependencyType"/>
+    <owl:disjointWith rdf:resource="#TimeDependentModel"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="isInterfaceVariableOf">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="hasInterfaceVariable"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#InternalComponent"/>
+    <rdfs:domain rdf:resource="#InterfaceVariable"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="describedBy">
+    <rdfs:domain rdf:resource="#ModelService"/>
+    <rdfs:range rdf:resource="#ModelInterface"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#contem">
+    <rdfs:domain rdf:resource="#CellStructure"/>
+    <rdfs:range rdf:resource="#CellStructure"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#isContainedIn"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="temEquacao">
+    <rdfs:domain rdf:resource="#InternalComponent"/>
+    <rdfs:range rdf:resource="#Equation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isMeasuredBy">
+    <rdfs:domain rdf:resource="#Quantidade"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="measures"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#Unidade"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#modelCompartment">
+    <rdfs:range rdf:resource="#Compartment"/>
+    <rdfs:domain rdf:resource="#ModeloPerfil"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="presente">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ModelService"/>
+          <owl:Class rdf:about="#Proteina"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ModeloPerfil"/>
+          <owl:Class rdf:about="#Proteina"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasCellElement">
+    <rdfs:range rdf:resource="#CelulaElemento"/>
+    <rdfs:domain rdf:resource="#Componente"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasBiologicalEntity">
+    <rdfs:range rdf:resource="#BiologicaEntidade"/>
+    <rdfs:domain rdf:resource="#ModeloPerfil"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasInterfaceVariable">
+    <owl:inverseOf rdf:resource="#isInterfaceVariableOf"/>
+    <rdfs:domain rdf:resource="#InternalComponent"/>
+    <rdfs:range rdf:resource="#InterfaceVariable"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="temVariavel"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="composedOf">
+    <rdfs:range rdf:resource="#Componente"/>
+    <rdfs:domain rdf:resource="#ModeloPerfil"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="refersTo">
+    <rdfs:domain rdf:resource="#ModelService"/>
+    <rdfs:range rdf:resource="#CellMLModel"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasVariableUnit">
+    <rdfs:domain rdf:resource="#Variavel"/>
+    <rdfs:range rdf:resource="#Unidade"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isContainedIn">
+    <owl:inverseOf rdf:resource="#contem"/>
+    <rdfs:range rdf:resource="#CellStructure"/>
+    <rdfs:domain rdf:resource="#CellStructure"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="encapsules">
+    <rdfs:domain rdf:resource="#Componente"/>
+    <rdfs:range rdf:resource="#Componente"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#temMedidas">
+    <rdfs:range rdf:resource="#Quantidade"/>
+    <rdfs:domain rdf:resource="#Variavel"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="temInterface">
+    <rdfs:domain rdf:resource="#ModelInterface"/>
+    <rdfs:range rdf:resource="#ModelParameter"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasLocalVariable">
+    <rdfs:range rdf:resource="#LocalVariavel"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#temVariavel"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="#InternalComponent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#measures">
+    <rdfs:range rdf:resource="#Quantidade"/>
+    <owl:inverseOf rdf:resource="#isMeasuredBy"/>
+    <rdfs:domain rdf:resource="#Unidade"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasDomainEntity">
+    <rdfs:range rdf:resource="#DominioEntidade"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Variavel"/>
+          <owl:Class rdf:about="#CellProcess"/>
+          <owl:Class rdf:about="#Componente"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#temVariavel">
+    <rdfs:domain rdf:resource="#InternalComponent"/>
+    <rdfs:range rdf:resource="#Variavel"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="hasComponentURI">
+    <rdfs:domain rdf:resource="#ExternalComponent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasPublicInterface">
+    <rdfs:domain rdf:resource="#InterfaceVariable"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasChemicalSymbol">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#QuimicoElemento"/>
+          <owl:Class rdf:about="#CelulaElemento"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="temDescricao">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Celo"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="temNome">
+    <rdfs:domain rdf:resource="#Celo"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasInitialValue">
+    <rdfs:domain rdf:resource="#Variavel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasURI">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#CellMLModel"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasPrivateInterface">
+    <rdfs:domain rdf:resource="#InterfaceVariable"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasMath">
+    <rdfs:domain rdf:resource="#Equation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="temSimbolo">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Unidade"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="temDetalhe">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#InternalComponent"/>
+  </owl:DatatypeProperty>
+  <owl:SymmetricProperty rdf:ID="conectaA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Componente"/>
+          <owl:Class rdf:about="#Celo"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Componente"/>
+          <owl:Class rdf:about="#Celo"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <owl:inverseOf rdf:resource="#conectaA"/>
+  </owl:SymmetricProperty>
+  <ElectrophysiologicalModel rdf:ID="MulticompartmentModel"/>
+  <UserDefinedQuantity rdf:ID="CapacitancePerArea">
+    <rdf:type rdf:resource="#Unidade"/>
+    <isMeasuredBy>
+      <UserDefinedUnit rdf:ID="microF_per_cm2">
+        <measures rdf:resource="#CapacitancePerArea"/>
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >microF_per_cm2</temNome>
+      </UserDefinedUnit>
+    </isMeasuredBy>
+    <isMeasuredBy>
+      <UserDefinedUnit rdf:ID="uF_per_mm2">
+        <measures rdf:resource="#CapacitancePerArea"/>
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >uF_per_mm2</temNome>
+      </UserDefinedUnit>
+    </isMeasuredBy>
+  </UserDefinedQuantity>
+  <UserDefinedQuantity rdf:ID="ElectricConductancePerCapacitance">
+    <isMeasuredBy>
+      <UserDefinedUnit rdf:ID="nanoS_per_picoF">
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >nanoS_per_picoF</temNome>
+        <measures rdf:resource="#ElectricConductancePerCapacitance"/>
+      </UserDefinedUnit>
+    </isMeasuredBy>
+  </UserDefinedQuantity>
+  <CellPart rdf:ID="Myoplasm">
+    <contem>
+      <CellPart rdf:ID="Buffer">
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >buffer</temNome>
+        <isContainedIn rdf:resource="#Myoplasm"/>
+      </CellPart>
+    </contem>
+    <contem>
+      <CellPart rdf:ID="SarcoplasmicReticulum">
+        <isContainedIn rdf:resource="#Myoplasm"/>
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >SR</temNome>
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >sarcoplasmicreticulum</temNome>
+      </CellPart>
+    </contem>
+    <isContainedIn>
+      <CellSpace rdf:ID="IntraCelularEspaco">
+        <contem>
+          <CellPart rdf:ID="Nucleus">
+            <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >nucleus</temNome>
+            <isContainedIn rdf:resource="#IntraCelularEspaco"/>
+          </CellPart>
+        </contem>
+        <contem>
+          <CellPart rdf:ID="Mitocondria">
+            <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >mitochodria</temNome>
+            <isContainedIn rdf:resource="#IntraCelularEspaco"/>
+          </CellPart>
+        </contem>
+        <contem rdf:resource="#Myoplasm"/>
+        <contem>
+          <CellSpace rdf:ID="DiadicSpace">
+            <isContainedIn rdf:resource="#IntraCelularEspaco"/>
+          </CellSpace>
+        </contem>
+      </CellSpace>
+    </isContainedIn>
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >myoplasm</temNome>
+  </CellPart>
+  <BaseQuantidade rdf:ID="LuminousIntensity">
+    <isMeasuredBy>
+      <SIBaseUnit rdf:ID="candela">
+        <temSimbolo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >cd</temSimbolo>
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >candela</temNome>
+        <measures rdf:resource="#LuminousIntensity"/>
+      </SIBaseUnit>
+    </isMeasuredBy>
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >luminous</temNome>
+  </BaseQuantidade>
+  <UserDefinedUnit rdf:ID="microA_per_cm2">
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >microA_per_cm2</temNome>
+    <measures>
+      <UserDefinedQuantity rdf:ID="EletricCurrentDensity">
+        <isMeasuredBy rdf:resource="#microA_per_cm2"/>
+        <isMeasuredBy>
+          <UserDefinedUnit rdf:ID="uA_per_mm2">
+            <measures rdf:resource="#EletricCurrentDensity"/>
+            <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >uA_per_mm2</temNome>
+          </UserDefinedUnit>
+        </isMeasuredBy>
+      </UserDefinedQuantity>
+    </measures>
+  </UserDefinedUnit>
+  <UserDefinedUnit rdf:ID="microF">
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >microF</temNome>
+    <measures>
+      <DerivedQuantity rdf:ID="Densidade">
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >densidade</temNome>
+        <isMeasuredBy>
+          <SIDerivedUnit rdf:ID="farad">
+            <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >farad</temNome>
+            <measures rdf:resource="#Densidade"/>
+            <temSimbolo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >F</temSimbolo>
+          </SIDerivedUnit>
+        </isMeasuredBy>
+        <isMeasuredBy rdf:resource="#microF"/>
+      </DerivedQuantity>
+    </measures>
+  </UserDefinedUnit>
+  <UserDefinedUnit rdf:ID="concentracao_unidade">
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >concentracao_unidade</temNome>
+    <measures>
+      <UserDefinedQuantity rdf:ID="Concentracao">
+        <isMeasuredBy rdf:resource="#concentracao_unidade"/>
+        <isMeasuredBy>
+          <UserDefinedUnit rdf:ID="millimolar">
+            <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >millimolar</temNome>
+            <measures rdf:resource="#Concentracao"/>
+          </UserDefinedUnit>
+        </isMeasuredBy>
+        <isMeasuredBy>
+          <UserDefinedUnit rdf:ID="mM">
+            <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >mM</temNome>
+            <measures rdf:resource="#Concentracao"/>
+          </UserDefinedUnit>
+        </isMeasuredBy>
+      </UserDefinedQuantity>
+    </measures>
+  </UserDefinedUnit>
+  <UserDefinedUnit rdf:ID="per_concentration_units">
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >per_concentration_units</temNome>
+    <measures>
+      <UserDefinedQuantity rdf:ID="PerConcentration">
+        <isMeasuredBy rdf:resource="#per_concentration_units"/>
+      </UserDefinedQuantity>
+    </measures>
+  </UserDefinedUnit>
+  <UserDefinedUnit rdf:ID="millivolt">
+    <measures rdf:resource="#Voltage"/>
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >millivolt</temNome>
+    <temSimbolo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mV</temSimbolo>
+  </UserDefinedUnit>
+  <UserDefinedUnit rdf:ID="micrometre3">
+    <measures>
+      <DerivedQuantity rdf:ID="Volume">
+        <isMeasuredBy>
+          <SIDerivedUnit rdf:ID="cubicmeter">
+            <temSimbolo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >m3</temSimbolo>
+            <measures rdf:resource="#Volume"/>
+            <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >cubicmeter</temNome>
+          </SIDerivedUnit>
+        </isMeasuredBy>
+        <isMeasuredBy>
+          <SIDerivedUnit rdf:ID="litre">
+            <temSimbolo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            ></temSimbolo>
+            <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            ></temNome>
+            <measures rdf:resource="#Volume"/>
+          </SIDerivedUnit>
+        </isMeasuredBy>
+        <isMeasuredBy rdf:resource="#micrometre3"/>
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >volume</temNome>
+      </DerivedQuantity>
+    </measures>
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >micrometre3</temNome>
+  </UserDefinedUnit>
+  <UserDefinedQuantity rdf:ID="VoltagePerTime">
+    <isMeasuredBy>
+      <UserDefinedUnit rdf:ID="mV_per_ms">
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >mV_per_ms</temNome>
+        <measures rdf:resource="#VoltagePerTime"/>
+      </UserDefinedUnit>
+    </isMeasuredBy>
+  </UserDefinedQuantity>
+  <UserDefinedUnit rdf:ID="mS_per_mm2">
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ms_per_mm2</temNome>
+    <measures>
+      <UserDefinedQuantity rdf:ID="ElectricConductancePerArea">
+        <isMeasuredBy>
+          <UserDefinedUnit rdf:ID="milliS_per_cm2">
+            <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >milliS_per_cm2</temNome>
+            <measures rdf:resource="#ElectricConductancePerArea"/>
+          </UserDefinedUnit>
+        </isMeasuredBy>
+        <isMeasuredBy rdf:resource="#mS_per_mm2"/>
+      </UserDefinedQuantity>
+    </measures>
+  </UserDefinedUnit>
+  <UserDefinedQuantity rdf:ID="MolarEntropy">
+    <isMeasuredBy>
+      <UserDefinedUnit rdf:ID="gas_constant_units">
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >gas_constant_units</temNome>
+        <measures rdf:resource="#MolarEntropy"/>
+      </UserDefinedUnit>
+    </isMeasuredBy>
+    <isMeasuredBy>
+      <UserDefinedUnit rdf:ID="joule_per_kilomole_kelvin">
+        <measures rdf:resource="#MolarEntropy"/>
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >joule_per_kilomole_kelvin</temNome>
+      </UserDefinedUnit>
+    </isMeasuredBy>
+    <isMeasuredBy>
+      <UserDefinedUnit rdf:ID="joule_per_mole_kelvin">
+        <measures rdf:resource="#MolarEntropy"/>
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >joule_per_mole_kelvin</temNome>
+      </UserDefinedUnit>
+    </isMeasuredBy>
+  </UserDefinedQuantity>
+  <CardiacoMiocitos rdf:ID="SinoAtrialNode"/>
+  <DerivedQuantity rdf:ID="Eletriclnductance">
+    <isMeasuredBy>
+      <SIBaseUnit rdf:ID="siemens">
+        <temSimbolo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >S</temSimbolo>
+        <measures rdf:resource="#Eletriclnductance"/>
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >siemens</temNome>
+      </SIBaseUnit>
+    </isMeasuredBy>
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >eletricelonductance</temNome>
+  </DerivedQuantity>
+  <UserDefinedQuantity rdf:ID="ADimensional">
+    <isMeasuredBy>
+      <DefinedUnit rdf:ID="dimensionless">
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >dimensionless</temNome>
+        <rdf:type rdf:resource="#SIEntity"/>
+        <measures rdf:resource="#ADimensional"/>
+      </DefinedUnit>
+    </isMeasuredBy>
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></temNome>
+  </UserDefinedQuantity>
+  <owl:DataRange>
+    <owl:oneOf rdf:parseType="Resource">
+      <rdf:rest rdf:parseType="Resource">
+        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >no</rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </rdf:rest>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >yes</rdf:first>
+    </owl:oneOf>
+  </owl:DataRange>
+  <UserDefinedUnit rdf:ID="per_millivolt">
+    <measures>
+      <UserDefinedQuantity rdf:ID="PorVoltage">
+        <isMeasuredBy rdf:resource="#per_millivolt"/>
+        <isMeasuredBy>
+          <UserDefinedUnit rdf:ID="per_mV">
+            <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >per_mV</temNome>
+            <measures rdf:resource="#PorVoltage"/>
+          </UserDefinedUnit>
+        </isMeasuredBy>
+      </UserDefinedQuantity>
+    </measures>
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >per_millivolt</temNome>
+  </UserDefinedUnit>
+  <DerivedQuantity rdf:ID="Density">
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >density</temNome>
+  </DerivedQuantity>
+  <SIBaseUnit rdf:ID="metro">
+    <temSimbolo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >m</temSimbolo>
+    <measures>
+      <BaseQuantidade rdf:ID="Length">
+        <isMeasuredBy rdf:resource="#metro"/>
+        <isMeasuredBy>
+          <SIBaseUnit rdf:ID="metre">
+            <measures rdf:resource="#Length"/>
+            <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >metre</temNome>
+            <temSimbolo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >m</temSimbolo>
+          </SIBaseUnit>
+        </isMeasuredBy>
+        <isMeasuredBy>
+          <UserDefinedUnit rdf:ID="micrometro">
+            <measures rdf:resource="#Length"/>
+            <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >micrometro</temNome>
+          </UserDefinedUnit>
+        </isMeasuredBy>
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >length</temNome>
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >L</temNome>
+      </BaseQuantidade>
+    </measures>
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >meter</temNome>
+  </SIBaseUnit>
+  <DerivedQuantity rdf:ID="EletricResistence">
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >eletricresistence</temNome>
+  </DerivedQuantity>
+  <DerivedQuantity rdf:ID="ElectricConductance"/>
+  <UserDefinedUnit rdf:ID="mm2">
+    <measures>
+      <DerivedQuantity rdf:ID="Area">
+        <isMeasuredBy>
+          <SIDerivedUnit rdf:ID="squaremeter">
+            <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >squaremeter</temNome>
+            <measures rdf:resource="#Area"/>
+            <temSimbolo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >m2</temSimbolo>
+          </SIDerivedUnit>
+        </isMeasuredBy>
+        <isMeasuredBy>
+          <UserDefinedUnit rdf:ID="cm2">
+            <measures rdf:resource="#Area"/>
+            <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >cm2</temNome>
+          </UserDefinedUnit>
+        </isMeasuredBy>
+        <isMeasuredBy rdf:resource="#mm2"/>
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >area</temNome>
+      </DerivedQuantity>
+    </measures>
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mm2</temNome>
+  </UserDefinedUnit>
+  <UserDefinedUnit rdf:ID="por_millisegundo">
+    <measures>
+      <UserDefinedQuantity rdf:ID="PorTempo">
+        <isMeasuredBy rdf:resource="#por_millisegundo"/>
+      </UserDefinedQuantity>
+    </measures>
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >por_millisegundo</temNome>
+  </UserDefinedUnit>
+  <BaseQuantidade rdf:ID="Tempo">
+    <isMeasuredBy>
+      <SIBaseUnit rdf:ID="segundo">
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >second</temNome>
+        <temSimbolo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >s</temSimbolo>
+        <measures rdf:resource="#Tempo"/>
+      </SIBaseUnit>
+    </isMeasuredBy>
+    <isMeasuredBy>
+      <UserDefinedUnit rdf:ID="millisegundo">
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >millisegundo</temNome>
+        <measures rdf:resource="#Tempo"/>
+      </UserDefinedUnit>
+    </isMeasuredBy>
+    <isMeasuredBy>
+      <UserDefinedUnit rdf:ID="ms">
+        <temSimbolo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >ms</temSimbolo>
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >ms</temNome>
+        <measures rdf:resource="#Tempo"/>
+      </UserDefinedUnit>
+    </isMeasuredBy>
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tempo</temNome>
+  </BaseQuantidade>
+  <ElectrophysiologicalModel rdf:ID="MarkovModel"/>
+  <UserDefinedUnit rdf:ID="per_mm">
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >per_mm</temNome>
+    <measures>
+      <UserDefinedQuantity rdf:ID="PerLength">
+        <isMeasuredBy rdf:resource="#per_mm"/>
+      </UserDefinedQuantity>
+    </measures>
+  </UserDefinedUnit>
+  <UserDefinedUnit rdf:ID="faraday_constante_unidade">
+    <measures>
+      <UserDefinedQuantity rdf:ID="ElectricChargePerAmount">
+        <isMeasuredBy>
+          <UserDefinedUnit rdf:ID="coulomb_per_millimole">
+            <measures rdf:resource="#ElectricChargePerAmount"/>
+            <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >coulomb_per_millimole</temNome>
+          </UserDefinedUnit>
+        </isMeasuredBy>
+        <isMeasuredBy>
+          <UserDefinedUnit rdf:ID="coulomb_per_mole">
+            <measures rdf:resource="#ElectricChargePerAmount"/>
+            <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >coulomb_per_mole</temNome>
+          </UserDefinedUnit>
+        </isMeasuredBy>
+        <isMeasuredBy rdf:resource="#faraday_constante_unidade"/>
+      </UserDefinedQuantity>
+    </measures>
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >faraday_constante_unidade</temNome>
+  </UserDefinedUnit>
+  <BaseQuantidade rdf:ID="Mass">
+    <isMeasuredBy>
+      <SIBaseUnit rdf:ID="kilogram">
+        <measures rdf:resource="#Mass"/>
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >kilogram</temNome>
+        <temSimbolo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >kg</temSimbolo>
+      </SIBaseUnit>
+    </isMeasuredBy>
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >massa</temNome>
+  </BaseQuantidade>
+  <SIDerivedUnit rdf:ID="weber">
+    <measures>
+      <DerivedQuantity rdf:ID="MagneticFlux">
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >magneticflux</temNome>
+        <isMeasuredBy rdf:resource="#weber"/>
+      </DerivedQuantity>
+    </measures>
+    <temSimbolo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Wb</temSimbolo>
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weber</temNome>
+  </SIDerivedUnit>
+  <SIBaseUnit rdf:ID="mole">
+    <temSimbolo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mol</temSimbolo>
+    <measures>
+      <BaseQuantidade rdf:ID="Substance">
+        <isMeasuredBy rdf:resource="#mole"/>
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >substance</temNome>
+      </BaseQuantidade>
+    </measures>
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mole</temNome>
+  </SIBaseUnit>
+  <BaseQuantidade rdf:ID="Temperatura">
+    <isMeasuredBy>
+      <SIBaseUnit rdf:ID="kelvin">
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >kelvin</temNome>
+        <measures rdf:resource="#Temperatura"/>
+        <temSimbolo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >K</temSimbolo>
+      </SIBaseUnit>
+    </isMeasuredBy>
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >temperatura</temNome>
+  </BaseQuantidade>
+  <UserDefinedUnit rdf:ID="per_ms">
+    <measures rdf:resource="#PorTempo"/>
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >per_ms</temNome>
+    <temSimbolo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >/ms</temSimbolo>
+  </UserDefinedUnit>
+  <CardiacoMiocitos rdf:ID="VentricularCell"/>
+  <CardiacoMiocitos rdf:ID="AtrialCell"/>
+  <UserDefinedUnit rdf:ID="millimolar_per_millisecond">
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >millimolar_per_millisecond</temNome>
+    <measures>
+      <UserDefinedQuantity rdf:ID="ConcentrationPerTime">
+        <isMeasuredBy rdf:resource="#millimolar_per_millisecond"/>
+        <isMeasuredBy>
+          <UserDefinedUnit rdf:ID="mM_per_ms">
+            <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >mM_per_ms</temNome>
+            <measures rdf:resource="#ConcentrationPerTime"/>
+          </UserDefinedUnit>
+        </isMeasuredBy>
+      </UserDefinedQuantity>
+    </measures>
+  </UserDefinedUnit>
+  <UserDefinedUnit rdf:ID="per_millivolt_millisecond">
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >per_millivolt_millisecond</temNome>
+    <measures>
+      <UserDefinedQuantity rdf:ID="PerVoltageTime">
+        <isMeasuredBy rdf:resource="#per_millivolt_millisecond"/>
+        <isMeasuredBy>
+          <UserDefinedUnit rdf:ID="per_mV_ms">
+            <measures rdf:resource="#PerVoltageTime"/>
+            <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >per_mV_ms</temNome>
+          </UserDefinedUnit>
+        </isMeasuredBy>
+      </UserDefinedQuantity>
+    </measures>
+  </UserDefinedUnit>
+  <SIDerivedUnit rdf:ID="hertz">
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hertz</temNome>
+    <measures>
+      <DerivedQuantity rdf:ID="Frequencia">
+        <isMeasuredBy rdf:resource="#hertz"/>
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >frequencia</temNome>
+      </DerivedQuantity>
+    </measures>
+    <temSimbolo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Hz</temSimbolo>
+  </SIDerivedUnit>
+  <ElectrophysiologicalModel rdf:ID="HodgkinHuxleyModel"/>
+  <UserDefinedQuantity rdf:ID="Condutividade"/>
+  <DerivedQuantity rdf:ID="Aceleracao">
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >aceleracao</temNome>
+  </DerivedQuantity>
+  <UserDefinedUnit rdf:ID="nanoA_per_millimolar">
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >nanoA_per_millimolar</temNome>
+    <measures>
+      <UserDefinedQuantity rdf:ID="ElectricCurrentPerConcentration">
+        <isMeasuredBy rdf:resource="#nanoA_per_millimolar"/>
+      </UserDefinedQuantity>
+    </measures>
+  </UserDefinedUnit>
+  <DerivedQuantity rdf:ID="Inductance">
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >inductance</temNome>
+  </DerivedQuantity>
+  <DerivedQuantity rdf:ID="Velocity">
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >velocity</temNome>
+    <isMeasuredBy>
+      <UserDefinedUnit rdf:ID="mm_per_ms">
+        <measures rdf:resource="#Velocity"/>
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >mm_per_ms</temNome>
+      </UserDefinedUnit>
+    </isMeasuredBy>
+  </DerivedQuantity>
+  <Nucleotideo rdf:ID="ATP"/>
+  <UserDefinedQuantity rdf:ID="ElectricCurrentPerCapacitance">
+    <isMeasuredBy>
+      <UserDefinedUnit rdf:ID="picoA_per_picoF">
+        <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >picoA_per_picoF</temNome>
+        <measures rdf:resource="#ElectricCurrentPerCapacitance"/>
+      </UserDefinedUnit>
+    </isMeasuredBy>
+  </UserDefinedQuantity>
+  <owl:AllDifferent/>
+  <QuimicoElemento rdf:ID="Calcium">
+    <hasChemicalSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ca</hasChemicalSymbol>
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >calcium</temNome>
+  </QuimicoElemento>
+  <rdf:List>
+    <rdf:first rdf:resource="#x"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:List>
+  <CardiacoMiocitos rdf:ID="AtrioVentricularNode"/>
+  <CardiacoMiocitos rdf:ID="His-PurkinjeFibre"/>
+  <ElectrophysiologicalModel rdf:ID="SynapticModel"/>
+  <owl:AllDifferent/>
+  <QuimicoObjeto rdf:ID="Atom"/>
+  <QuimicoElemento rdf:ID="Chlorid">
+    <hasChemicalSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cl</hasChemicalSymbol>
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >chlorid</temNome>
+  </QuimicoElemento>
+  <QuimicoObjeto rdf:ID="Ion">
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ion</temNome>
+  </QuimicoObjeto>
+  <UserDefinedQuantity rdf:ID="ElectricChargePerConcentration"/>
+  <owl:AllDifferent/>
+  <QuimicoObjeto rdf:ID="Molecule">
+    <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >molecule</temNome>
+  </QuimicoObjeto>
+  <ElectrophysiologicalModel rdf:ID="NetworkModel"/>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3.1, Build 430)  http://protege.stanford.edu -->

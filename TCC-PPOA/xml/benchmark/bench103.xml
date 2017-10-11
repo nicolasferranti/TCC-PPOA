@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<similarityCalc> 
+    <container name="Funcoes principais">
+        <function weight="0.5">
+            <class>br.ufjf.ontology.gnosis.similarity.structure.ConceptNameSimilarity</class>
+            <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.DamerauLevenshteinEditDistance</strategy> 
+            <penalty>0.0</penalty> 
+        </function>
+        <container name="Funcoes Secundarias" weight="0.5">
+            <function weight="0.4">
+                <class>br.ufjf.ontology.gnosis.similarity.structure.DirectSuperClassSimilarity</class>
+                <combination>br.ufjf.ontology.gnosis.similarity.combination.DeepCombination</combination>
+                <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.DamerauLevenshteinEditDistance</strategy>
+                <penalty>0.0</penalty> 
+            </function>
+            <function weight="0.4">
+                <class>br.ufjf.ontology.gnosis.similarity.structure.DirectSubClassSimilarity</class>
+                <combination>br.ufjf.ontology.gnosis.similarity.combination.DeepCombination</combination>
+                <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.DamerauLevenshteinEditDistance</strategy>
+                <penalty>0.0</penalty> 
+            </function>
+            <function weight="0.2">
+                <class>br.ufjf.ontology.gnosis.similarity.structure.DirectIndividualbyNameSimilarity</class>
+                <combination>br.ufjf.ontology.gnosis.similarity.combination.DeepCombination</combination>
+                <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.DamerauLevenshteinEditDistance</strategy>
+                <penalty>0.0</penalty> 
+            </function>
+            <!--container name="Funcoes Propriedades" weight="0.2">
+                <function weight="0.2">
+                    <class>br.ufjf.ontology.gnosis.similarity.structure.DirectDataTypePropertybyRangeSimilarity</class>
+                    <penalty>0.0</penalty> 
+                </function> 
+                <function weight="0.3">
+                    <class>br.ufjf.ontology.gnosis.similarity.structure.DirectDataTypePropertybyNameSimilarity</class>
+                    <combination>br.ufjf.ontology.gnosis.similarity.combination.DeepCombination</combination>
+                    <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.DamerauLevenshteinEditDistance</strategy>
+                    <penalty>0.0</penalty> 
+                </function>
+                <function weight="0.4">
+                    <class>br.ufjf.ontology.gnosis.similarity.structure.DirectObjectPropertybyRangeSimilarity</class>
+                    <combination>br.ufjf.ontology.gnosis.similarity.combination.DeepCombination</combination>
+                    <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.DamerauLevenshteinEditDistance</strategy>
+                    <penalty>0.0</penalty> 
+                </function>
+                <function weight="0.3">
+                    <class>br.ufjf.ontology.gnosis.similarity.structure.DirectObjectPropertybyNameSimilarity</class>
+                    <combination>br.ufjf.ontology.gnosis.similarity.combination.DeepCombination</combination>
+                    <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.DamerauLevenshteinEditDistance</strategy>
+                    <penalty>0.0</penalty> 
+                </function>
+            </container-->
+        </container> 
+    </container> 
+    <ontologies> 
+        <ontology id="/home/jairo/Dropbox/documentos/Acadêmicos/Doutorado/Fase_final/Avaliacao/Teste/benchmarks/101/onto.rdf"></ontology> 
+        <ontology id="/home/jairo/Dropbox/documentos/Acadêmicos/Doutorado/Fase_final/Avaliacao/Teste/benchmarks/103/onto.rdf"></ontology> 
+	<!-- If pre-alignment element is filled, thus the weights above will not be used by application -->
+        <pre-alignment>xml/benchmark/prealign103.rdf</pre-alignment>
+    </ontologies> 
+</similarityCalc>
