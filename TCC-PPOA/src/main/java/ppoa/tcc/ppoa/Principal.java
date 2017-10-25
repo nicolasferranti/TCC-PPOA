@@ -5,109 +5,22 @@
  */
 package ppoa.tcc.ppoa;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import pp.domain.ArrayPesosGranulares;
-import pp.domain.ComparatorCromossomo;
 import pp.domain.Cromossomo;
-import pp.domain.Equacao;
 import pp.domain.FuncaoComposta;
 import pp.domain.FuncaoSimples;
 import pp.domain.Gene;
 import pp.domain.IFuncao;
-import similarity.Analyser;
-import ppoa.tcc.ppoa.*;
-import ppoa.tcc.ppoa.Operadores;
+import ppoa.tcc.ppoa.BuscaLocal;
 
 /**
  *
  * @author nicolasferranti
  */
 public class Principal {
-
-    private static BigDecimal avaliaCromossomo(Cromossomo c, Gerador gerador) {
-
-        //this.__contAvaliacoes++;
-        c.limpaCadaResultado();
-        c.setSoma(Operadores.avaliaCromossomo(c, gerador.getEquacoes(), gerador.getResultadoEquacoes()));
-        c.setDiferenca(gerador.getSomatorioEquacoes().subtract(c.getSoma()).abs());
-        return c.getSoma();
-    }
-
-    public static Cromossomo runGRASP2(List<Cromossomo> populacao, Gerador gerador) {
-        //Printer.imprimeInicio(this.parametros.getInt("ag.populacao.inicial"), this.parametros.getInt("ag.geracoes"));
-
-        Cromossomo vencedorAntigo = null;
-        int nGer = 0;
-        Cromossomo _vencedor = null;
-
-        do {
-            vencedorAntigo = populacao.get(0);
-            Printer.imprimeInformacoesInicioGeracao(++nGer);
-
-            //BigDecimal fitnessTotal = avaliaPopulacao();
-            fazDiversificacaoIntensificacao(populacao, gerador);
-            _vencedor = populacao.get(0);
-
-            Printer.imprimeFim(populacao.get(0));
-        } while (vencedorAntigo != _vencedor);
-
-        System.out.println("Número de gerações utilizadas no GRASP: " + nGer);
-
-        //retorna a equacoes já alteradas
-        Equacao.getEquacoesComPesos(gerador.getEquacoes(), populacao.get(0));
-
-        return populacao.get(0);
-    }
-
-    private static void fazDiversificacaoIntensificacao(List<Cromossomo> populacao, Gerador gerador) {
-
-        Printer.imprimeDiversificacaoIntensificacaoInicio();
-
-        double granularidade = 0.005;
-        //double granularidade = this.parametros.getDouble("ag.granularidade");
-        //Cria colecao com solucoes variadas a partir do vencedor
-        Cromossomo venc = populacao.get(0);
-
-        ArrayList<Cromossomo> al = new ArrayList<Cromossomo>();
-        for (int i = 0; i < venc.getNumeroDeGenes(); i++) {
-            //Cria cromossomo com um gene somado de granularidade
-            Cromossomo cAux = venc.clone();
-            cAux.getGene(i).addValor(granularidade);
-            avaliaCromossomo(cAux, gerador);
-            al.add(cAux);
-
-            //Cria cromossomo com um gene subtraído de granularidade
-            if (venc.getGene(i).getValor() >= granularidade) {
-                cAux = venc.clone();
-                cAux.getGene(i).subtValor(granularidade);
-                avaliaCromossomo(cAux, gerador);
-                al.add(cAux);
-            }
-        }
-
-        //Faz a busca local, ou seja, verifica se alguma solução na vizinhança é melhor que a solução inicial
-        ComparatorCromossomo cc = new ComparatorCromossomo(false);
-        Collections.sort(al, cc);
-
-        Printer.imprimeDiversificacaoIntensificacao(venc, al);
-
-        // Caso o primeiro individuo seja melhor que o vencedor atual, insira-o na população
-        if (cc.compare(venc, al.get(0)) > 0) {
-            populacao.add(0, al.get(0));
-        }
-
-        // Insere algumas das soluções de vizinhança na população
-//        if (this.parametros.getInt("ag.buscalocal.insercao") != 0) {
-//            int qtd = (int) (al.size() / this.parametros.getInt("ag.buscalocal.insercao"));
-//            for (int i = 1; i < qtd; i++) {
-//                this.populacao.add(al.get(i));
-//            }
-//        }
-    }
 
     public static void main(String[] args) throws Exception {
 //        Analyser analyser = new Analyser("/home/nicolasferranti/NetBeansProjects/TCC-PPOA/xml/xml_benchmark_Nicolas.xml");
@@ -192,24 +105,29 @@ public class Principal {
 
         List<Cromossomo> pop = g.criaPopulacao(tamPop, apg);
 
-        for (int i = 0; i < tamPop; i++) {
-            for (Iterator<Gene> it = pop.get(i).genes.iterator(); it.hasNext();) {
-                Gene ge = it.next();
-                System.out.print(ge.getValor() + " ");
-            }
-            avaliaCromossomo(pop.get(i), g);
-            System.out.println("| Difference: " + pop.get(i).getDiferenca());
-        }
-        System.out.println("--------------");
-        Cromossomo win = runGRASP2(pop, g);
-        
-        for (Iterator<Gene> it = win.genes.iterator(); it.hasNext();) {
-            Gene ge = it.next();
-            System.out.print(ge.getValor() + " ");
-        }
-        avaliaCromossomo(win, g);
-        System.out.println("| Difference: " + win.getDiferenca());
+        PresaPredador pp = new PresaPredador(g, tamPop, 0.005);
+        //pp.printDiferenca();
+        pp.ordenaPorFitness();
+        pp.printDiferenca();
+        pp.calculaDirecao(3);
 
+//        for (int i = 0; i < tamPop; i++) {
+//            for (Iterator<Gene> it = pop.get(i).genes.iterator(); it.hasNext();) {
+//                Gene ge = it.next();
+//                System.out.print(ge.getValor() + " ");
+//            }
+//            BuscaLocal.avaliaCromossomo(pop.get(i), g);
+//            System.out.println("| Difference: " + pop.get(i).getDiferenca());
+//        }
+//        System.out.println("--------------");
+//        Cromossomo win = BuscaLocal.runGRASP2(pop, g);
+//
+//        for (Iterator<Gene> it = win.genes.iterator(); it.hasNext();) {
+//            Gene ge = it.next();
+//            System.out.print(ge.getValor() + " ");
+//        }
+//        BuscaLocal.avaliaCromossomo(win, g);
+//        System.out.println("| Difference: " + win.getDiferenca());
     }
 
 }

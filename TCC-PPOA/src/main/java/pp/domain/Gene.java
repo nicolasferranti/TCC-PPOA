@@ -38,6 +38,10 @@ public class Gene implements Serializable{
             return this.valor.doubleValue();
 	}
 
+        public BigDecimal getBigValor() {
+            return this.valor;
+	}
+
 
 
 }
