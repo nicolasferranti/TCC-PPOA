@@ -28,7 +28,7 @@ public class BuscaLocal {
         return c.getSoma();
     }
     
-    public static Cromossomo runGRASP2(List<Cromossomo> populacao, Gerador gerador) {
+    public static Cromossomo runGRASP2(List<Cromossomo> populacao, Gerador gerador, double Granularidade) {
         //Printer.imprimeInicio(this.parametros.getInt("ag.populacao.inicial"), this.parametros.getInt("ag.geracoes"));
 
         Cromossomo vencedorAntigo = null;
@@ -40,7 +40,7 @@ public class BuscaLocal {
             Printer.imprimeInformacoesInicioGeracao(++nGer);
 
             //BigDecimal fitnessTotal = avaliaPopulacao();
-            fazDiversificacaoIntensificacao(populacao, gerador);
+            fazDiversificacaoIntensificacao(populacao, gerador,Granularidade);
             _vencedor = populacao.get(0);
 
             Printer.imprimeFim(populacao.get(0));
@@ -54,11 +54,11 @@ public class BuscaLocal {
         return populacao.get(0);
     }
 
-    private static void fazDiversificacaoIntensificacao(List<Cromossomo> populacao, Gerador gerador) {
+    private static void fazDiversificacaoIntensificacao(List<Cromossomo> populacao, Gerador gerador, double Granularidade) {
 
         Printer.imprimeDiversificacaoIntensificacaoInicio();
 
-        double granularidade = 0.005;
+        double granularidade = Granularidade;
         //double granularidade = this.parametros.getDouble("ag.granularidade");
         //Cria colecao com solucoes variadas a partir do vencedor
         Cromossomo venc = populacao.get(0);

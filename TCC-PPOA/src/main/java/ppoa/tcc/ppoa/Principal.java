@@ -106,10 +106,10 @@ public class Principal {
         List<Cromossomo> pop = g.criaPopulacao(tamPop, apg);
 
         PresaPredador pp = new PresaPredador(g, tamPop, 0.005);
-        //pp.printDiferenca();
+        pp.printDiferenca();
         pp.ordenaPorFitness();
         pp.printDiferenca();
-        pp.calculaDirecao(3);
+        //pp.calculaDirecao(3);
 
 //        for (int i = 0; i < tamPop; i++) {
 //            for (Iterator<Gene> it = pop.get(i).genes.iterator(); it.hasNext();) {

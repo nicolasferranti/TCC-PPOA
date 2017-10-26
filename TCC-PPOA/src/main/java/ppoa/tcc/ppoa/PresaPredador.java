@@ -27,13 +27,24 @@ public class PresaPredador {
     private ArrayPesosGranulares pesos;
     private double granularidade;
     private int tamPop;
+    
+    /** constantes do cálculo da direção
+     *  se N é usado, então Tau nao é.
+     */
     private double N = 1.01;
-
+    private double Tau = 1.01;
+    
     // constantes do cáculo do passo
     private double LambdaMAX = 10;
     private double Eps;
     private double Beta = 0;
     private double w = 1;
+
+    // chance de seguir as melhores presas
+    private double prctSeguirOuCorrer = 0.8;
+
+    // melhor presa 
+    private Cromossomo bestIndividual = null;
 
     public PresaPredador(Gerador g, int tamanhoPopulacao, double Granularidade) {
         this.gerador = g;
@@ -41,10 +52,50 @@ public class PresaPredador {
         this.granularidade = Granularidade;
         this.pesos = new ArrayPesosGranulares(Granularidade);
         this.pop = this.gerador.criaPopulacao(tamanhoPopulacao, pesos);
+
         for (Cromossomo c : pop) {
             avaliaCromossomoDiferenca(c, gerador);
         }
     }
+
+    public void SimulaVida(int iteracoes) {
+        ordenaPorFitness();
+        this.bestIndividual = this.pop.get(0).clone();
+        avaliaCromossomoDiferenca(bestIndividual, gerador);
+
+        double runOrFollow;
+        Cromossomo bestAfterGRASP;
+
+        // começa gerações
+        for (int iterat = 0; iterat < iteracoes; iterat++) {
+            /**
+             * Ideia:
+             *  -> busca local na melhor presa 
+             *  -> fazer presas andarem (fugindo ou seguindo)
+             *  -> predador anda separado.
+             *  
+             */
+
+            
+            
+            
+            
+            ordenaPorFitness();
+            
+            bestAfterGRASP = BuscaLocal.runGRASP2(pop, gerador, granularidade);
+            avaliaCromossomoDiferenca(bestAfterGRASP, gerador);
+            
+            /**  
+             *  se a diferença que o melhor idividuo tinha for maior que a do novo
+             *  depois do GRASP, atualizar o melhor individuo. 
+             */
+            if (this.bestIndividual.getDiferenca().compareTo(bestAfterGRASP.getDiferenca()) > 0){
+                this.bestIndividual = bestAfterGRASP;
+            }
+
+        }
+    }
+
 
     /*
         Preenche os valores de soma e diferença do cromossomo e retorna a diferença
@@ -59,7 +110,7 @@ public class PresaPredador {
 
     public void printDiferenca() {
         for (int i = 0; i < tamPop; i++) {
-            System.out.println("individuo " + i + " | Difference:" + pop.get(i).getDiferenca() + " | SV:" + getSurvivorValue(i));
+            System.out.println("individuo " + pop.get(i).getId() + " | Difference:" + pop.get(i).getDiferenca() + " | SV:" + getSurvivorValue(i));
         }
         System.out.println();
     }
@@ -108,7 +159,8 @@ public class PresaPredador {
                 /**
                  * TODO SUBSTITUIR CONSTANTE PARA O CASO 0.
                  */
-                double NexpDivDist = pow(N, this.getSurvivorValue(j).doubleValue()) / distanciaEuclidiana(this.pop.get(indice), this.pop.get(j));
+                //double NexpDivDist = pow(N, this.getSurvivorValue(j).doubleValue()) / distanciaEuclidiana(this.pop.get(indice), this.pop.get(j));
+                double NexpDivDist = Math.exp( pow(this.getSurvivorValue(j).doubleValue(), this.Tau) - distanciaEuclidiana(this.pop.get(indice), this.pop.get(j)) );
                 // para cada gene compartilhado
                 for (int geneIterator = 0; geneIterator < this.gerador.getNumeroDeGenes(); geneIterator++) {
                     direcao[geneIterator].addValor(NexpDivDist * (this.pop.get(j).genes.get(geneIterator).getValor() - this.pop.get(indice).genes.get(geneIterator).getValor()));
