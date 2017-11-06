@@ -39,6 +39,7 @@ public class PresaPredador {
 
     // constantes do cáculo do passo
     private double LambdaMAX = 10;
+    private double LambdaMIN = 1;
     private double Eps;
     private double Beta = 0;
     private double w = 1;
@@ -91,6 +92,9 @@ public class PresaPredador {
                 }
 
                 /* MOVE PREDATOR. */
+                Cromossomo newPredator = this.calculaDirecaoPredator(tamPop - 1); 
+                avaliaCromossomoDiferenca(newPredator, gerador);
+                newPopulation.add(newPredator);
             }
 
             bestAfterGRASP = BuscaLocal.runGRASP2(pop, gerador, granularidade);
@@ -145,6 +149,9 @@ public class PresaPredador {
         return null;
     }
 
+    /**
+     <DONE AND TESTED>
+    */
     public BigDecimal getSurvivorValue(Cromossomo c) {
         if (c != null) {
             return BigDecimal.ONE.divide(c.getDiferenca(), 8, RoundingMode.HALF_UP);
@@ -152,9 +159,10 @@ public class PresaPredador {
         return null;
     }
 
-    /*
+    /**
         Calcula nova direção considerando população ordenada em ordem decrescente
         de SurvivorValue
+        <DONE AND TESTED>
      */
     public Cromossomo calculaDirecaoFollow(int indice) {
 
@@ -206,38 +214,10 @@ public class PresaPredador {
          * System.out.println("New SV:" + this.getSurvivorValue(it));
          */
     }
-
+    
     /**
-        Calcula nova direção do predador baseado na pior presa
-        <IMPORTANTE>
+     <DONE AND TESTED>
      */
-    public Cromossomo calculaDirecaoPredator(int indice) {
-
-        // cria nova direção zerada
-        Gene[] direcao = new Gene[this.gerador.getNumeroDeGenes()];
-        for (int i = 0; i < direcao.length; i++) {
-            direcao[i] = new Gene(0);
-        }
-
-        // indice > 0 porque a melhor presa não caminha
-        if (indice > 0 && indice < this.pop.size()) {
-            int j = tamPop - 2;
-
-            double NexpDivDist = Math.exp(pow(this.getSurvivorValue(j).doubleValue(), this.Tau) - distanciaEuclidiana(this.pop.get(indice), this.pop.get(j)));
-            // para cada gene compartilhado
-            for (int geneIterator = 0; geneIterator < this.gerador.getNumeroDeGenes(); geneIterator++) {
-                direcao[geneIterator].addValor(NexpDivDist * (this.pop.get(j).genes.get(geneIterator).getValor() - this.pop.get(indice).genes.get(geneIterator).getValor()));
-            }
-
-            Cromossomo newPredator = this.pop.get(indice);
-            //chamar o generate random e aplciar a formula
-            return newPredator;
-        } else {
-            return null;
-        }
-
-    }
-
     private double distanciaEuclidiana(Cromossomo i, Cromossomo j) {
         if (i == null || j == null) {
             return 0;
@@ -249,11 +229,68 @@ public class PresaPredador {
         return Math.sqrt(difSquare);
     }
 
+    /**
+     <DONE AND TESTED>
+     */
     private double getPassos(int cromossomoI) {
         this.Eps = Math.random();
         BigDecimal diffSV = this.getSurvivorValue(cromossomoI).subtract(this.getSurvivorValue(this.pop.size() - 1), MathContext.UNLIMITED);
         double denominador = Math.exp(this.Beta * pow(Math.abs(diffSV.doubleValue()), this.w));
         return (this.LambdaMAX * this.Eps * this.granularidade) / denominador;
+    }
+
+    /**
+     * Calcula nova direção do predador baseado na pior presa
+     * <DONE>
+     */
+    public Cromossomo calculaDirecaoPredator(int indice) {
+
+        // cria nova direção zerada
+        Gene[] direcao = new Gene[this.gerador.getNumeroDeGenes()];
+        for (int i = 0; i < direcao.length; i++) {
+            direcao[i] = new Gene(0);
+        }
+
+        if (indice > 0 && indice < this.pop.size()) {
+
+            Cromossomo newPredator = this.pop.get(indice);
+            Gene[] randomNormalizado = this.generateRandomDirectionNormalized();
+            Gene[] diferencaPresaNormalizada = this.generateDifferenceNormalizedVectorBetweenPredatorAndWorstPrey();
+            Gene g;
+            double termoRandomico, termoRelativo;
+            // para cada gene compartilhado
+            for (int geneIterator = 0; geneIterator < this.gerador.getNumeroDeGenes(); geneIterator++) {
+                termoRandomico = (this.LambdaMAX * Math.random() * randomNormalizado[geneIterator].getValor());
+                termoRelativo = (this.LambdaMIN * Math.random() * diferencaPresaNormalizada[geneIterator].getValor());
+                g = new Gene(newPredator.genes.get(geneIterator).getValor() + termoRandomico + termoRelativo);
+                newPredator.genes.add(geneIterator, g);
+            }
+
+            //avaliaCromossomoDiferenca(newPredator, gerador);
+            return newPredator;
+        } else {
+            return null;
+        }
+
+    }
+
+    private Gene[] generateDifferenceNormalizedVectorBetweenPredatorAndWorstPrey() {
+        Gene[] direcao = new Gene[this.gerador.getNumeroDeGenes()];
+        Cromossomo predator = this.pop.get(tamPop - 1);
+        Cromossomo worstPrey = this.pop.get(tamPop - 2);
+
+        double sumSquare = 0;
+        double difference = 0;
+        for (int i = 0; i < this.gerador.getNumeroDeGenes(); i++) {
+            difference = worstPrey.genes.get(i).getValor() - predator.genes.get(i).getValor();
+            direcao[i].replaceValor(difference);
+            sumSquare += pow(difference, 2);
+        }
+
+        for (int i = 0; i < this.gerador.getNumeroDeGenes(); i++) {
+            direcao[i].replaceValor(direcao[i].getValor() / Math.sqrt(sumSquare));
+        }
+        return direcao;
     }
 
     private Gene[] generateRandomDirectionNormalized() {
