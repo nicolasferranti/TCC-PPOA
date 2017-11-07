@@ -15,6 +15,7 @@ import pp.domain.FuncaoSimples;
 import pp.domain.Gene;
 import pp.domain.IFuncao;
 import ppoa.tcc.ppoa.BuscaLocal;
+import similarity.Analyser;
 
 /**
  *
@@ -23,8 +24,8 @@ import ppoa.tcc.ppoa.BuscaLocal;
 public class Principal {
 
     public static void main(String[] args) throws Exception {
-//        Analyser analyser = new Analyser("/home/nicolasferranti/NetBeansProjects/TCC-PPOA/xml/xml_benchmark_Nicolas.xml");
-//        analyser.process().imprimeTabela(new java.io.PrintWriter("/home/nicolasferranti/NetBeansProjects/TCC-PPOA/xml/OutTest.txt"));
+        Analyser analyser = new Analyser("/home/nicolasferranti/NetBeansProjects/TCC-PPOA/xml/xml_benchmark_Nicolas.xml");
+        analyser.process().imprimeTabela(new java.io.PrintWriter("/home/nicolasferranti/NetBeansProjects/TCC-PPOA/xml/OutTest.txt"));
 //
         ArrayList<IFuncao> equacoes = new ArrayList<IFuncao>();
 
@@ -101,14 +102,16 @@ public class Principal {
 
         ArrayPesosGranulares apg = new ArrayPesosGranulares(0.005);
 
-        int tamPop = 5;
+        int tamPop = 20;
 
         List<Cromossomo> pop = g.criaPopulacao(tamPop, apg);
 
         PresaPredador pp = new PresaPredador(g, tamPop, 0.005);
-        pp.printDiferenca();
-        pp.ordenaPorFitness();
-        pp.printDiferenca();
+        pp.SimulaVida(40);
+        
+//        pp.printDiferenca();
+//        pp.ordenaPorFitness();
+//        pp.printDiferenca();
         //pp.calculaDirecao(3);
 
 //        for (int i = 0; i < tamPop; i++) {
