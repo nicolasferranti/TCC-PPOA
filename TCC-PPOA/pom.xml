@@ -24,6 +24,21 @@
             <version>3.2.1</version>
             <type>jar</type>
         </dependency>
+        <dependency>
+            <groupId>org.semanticweb</groupId>
+            <artifactId>owl.align</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.semanticweb</groupId>
+            <artifactId>owl.model</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.inrialpes.exmo</groupId>
+            <artifactId>align.parser</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

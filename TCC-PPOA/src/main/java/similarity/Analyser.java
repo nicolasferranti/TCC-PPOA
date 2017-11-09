@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import ppoa.tcc.ppoa.PPConnectorUtil;
 
 /**
  *
@@ -45,12 +46,12 @@ public class Analyser {
         List<OntResource> conceitos1 = (List<OntResource>) i.next();
         List<OntResource> conceitos2 = (List<OntResource>) i.next();
 
-//        if (xml.callAG()) {
-//            File file = xml.getAlignmentFile();
-//            if (!file.exists()) throw new IOException("Arquivo de alinhamento n�o encontrado");
-//
-//            new AGConnectorUtil(file.getAbsolutePath(), conceitos1, conceitos2).setPesosToContainer(mainContainer);
-//        }
+        if (xml.callAG()) {
+            File file = xml.getAlignmentFile();
+            if (!file.exists()) throw new IOException("Arquivo de alinhamento não encontrado");
+
+            new PPConnectorUtil(file.getAbsolutePath(), conceitos1, conceitos2).setPesosToContainer(mainContainer);
+        }
         
         processaSimilaridades(conceitos1, conceitos2, mainContainer);
 

@@ -5,17 +5,24 @@
  */
 package ppoa.tcc.ppoa;
 
-import com.hp.hpl.jena.ontology.OntResource;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.List;
-import javafx.scene.control.Cell;
-import javax.naming.ConfigurationException;
+
+
 import pp.domain.FuncaoComposta;
 import pp.domain.FuncaoSimples;
 import pp.domain.IFuncao;
 import similarity.FunctionContainer;
 import similarity.common.FunctionWeightVO;
+import com.hp.hpl.jena.ontology.OntResource;
+import fr.inrialpes.exmo.align.parser.AlignmentParser;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.semanticweb.owl.align.Alignment;
+import org.semanticweb.owl.align.AlignmentException;
+import org.semanticweb.owl.align.Cell;
+import org.semanticweb.owl.model.OWLException;
 
 /**
  *
@@ -62,8 +69,8 @@ public class PPConnectorUtil {
 
     private void runAG(double[] resultadoDasEquacoes) {
         PresaPredador pp;
-        pp = new PresaPredador(new Gerador(equacoes, resultadoDasEquacoes), 20, 0.005);
-        pp.SimulaVida(50);
+        pp = new PresaPredador(new Gerador(equacoes, resultadoDasEquacoes), 40, 0.005);
+        pp.SimulaVida(100);
     }
 
     private void parserEquacoesToContainer(List<IFuncao> to, List<FunctionWeightVO> from) {

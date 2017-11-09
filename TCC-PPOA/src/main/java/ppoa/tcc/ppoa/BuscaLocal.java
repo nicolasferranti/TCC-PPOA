@@ -18,7 +18,7 @@ import pp.domain.Equacao;
  * @author nicolasferranti
  */
 public class BuscaLocal {
-    
+
     public static BigDecimal avaliaCromossomo(Cromossomo c, Gerador gerador) {
 
         //this.__contAvaliacoes++;
@@ -27,27 +27,26 @@ public class BuscaLocal {
         c.setDiferenca(gerador.getSomatorioEquacoes().subtract(c.getSoma()).abs());
         return c.getSoma();
     }
-    
+
     public static Cromossomo runGRASP2(List<Cromossomo> populacao, Gerador gerador, double Granularidade) {
         //Printer.imprimeInicio(this.parametros.getInt("ag.populacao.inicial"), this.parametros.getInt("ag.geracoes"));
-
+        
         Cromossomo vencedorAntigo = null;
         int nGer = 0;
         Cromossomo _vencedor = null;
 
         do {
             vencedorAntigo = populacao.get(0);
-            Printer.imprimeInformacoesInicioGeracao(++nGer);
+            //Printer.imprimeInformacoesInicioGeracao(++nGer);
 
             //BigDecimal fitnessTotal = avaliaPopulacao();
-            fazDiversificacaoIntensificacao(populacao, gerador,Granularidade);
+            fazDiversificacaoIntensificacao(populacao, gerador, Granularidade);
             _vencedor = populacao.get(0);
 
-            Printer.imprimeFim(populacao.get(0));
+            //Printer.imprimeFim(populacao.get(0));
         } while (vencedorAntigo != _vencedor);
 
-        System.out.println("Número de gerações utilizadas no GRASP: " + nGer);
-
+        //System.out.println("Número de gerações utilizadas no GRASP: " + nGer);
         //retorna a equacoes já alteradas
         Equacao.getEquacoesComPesos(gerador.getEquacoes(), populacao.get(0));
 
@@ -56,7 +55,7 @@ public class BuscaLocal {
 
     private static void fazDiversificacaoIntensificacao(List<Cromossomo> populacao, Gerador gerador, double Granularidade) {
 
-        Printer.imprimeDiversificacaoIntensificacaoInicio();
+        //Printer.imprimeDiversificacaoIntensificacaoInicio();
 
         double granularidade = Granularidade;
         //double granularidade = this.parametros.getDouble("ag.granularidade");
@@ -84,7 +83,7 @@ public class BuscaLocal {
         ComparatorCromossomo cc = new ComparatorCromossomo(false);
         Collections.sort(al, cc);
 
-        Printer.imprimeDiversificacaoIntensificacao(venc, al);
+        //Printer.imprimeDiversificacaoIntensificacao(venc, al);
 
         // Caso o primeiro individuo seja melhor que o vencedor atual, insira-o na população
         if (cc.compare(venc, al.get(0)) > 0) {
@@ -99,5 +98,5 @@ public class BuscaLocal {
 //            }
 //        }
     }
-    
+
 }

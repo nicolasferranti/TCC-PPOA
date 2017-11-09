@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>fr.inrialpes.exmo</groupId>
+  <artifactId>align.parser</artifactId>
+  <version>1.0</version>
+  <versioning>
+    <versions>
+      <version>1.0</version>
+    </versions>
+    <lastUpdated>20171109142611</lastUpdated>
+  </versioning>
+</metadata>

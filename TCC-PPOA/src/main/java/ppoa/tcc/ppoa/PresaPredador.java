@@ -29,13 +29,15 @@ public class PresaPredador {
     private ArrayPesosGranulares pesos;
     private double granularidade;
     private int tamPop;
-    private double CHANCE_TO_FOLLOW = 0.8;
+    private double CHANCE_TO_FOLLOW = 0.5;
+    
+    private double EpsonDiff = 0.00001;
 
     /**
      * constantes do cálculo da direção se N é usado, então Tau nao é.
      */
     private double N = 1.01;
-    private double Tau = 1.01;
+    private double Tau = 0.1;
 
     // constantes do cáculo do passo
     private double LambdaMAX = 50;
@@ -70,18 +72,19 @@ public class PresaPredador {
         List<Cromossomo> newPopulation;
 
         // começa gerações
-        for (int iterat = 0; iterat < iteracoes; iterat++) {
+        for (int iterat = 0; iterat < iteracoes && bestIndividual.getDiferenca().doubleValue() > EpsonDiff; iterat++) {
             System.out.println("BEST (" + iterat + ") :" + this.pop.get(0).getDiferenca());
             /**
              * <
-             * Ideia: 1 fazer presas andarem (fugindo ou seguindo) 2 predador
-             * anda separado 3 busca local na melhor presa.
+             * Ideia: 1 fazer presas andarem (fugindo ou seguindo)
+             * 2 predador anda separado
+             * 3 busca local na melhor presa. >
              *
              */
 
             newPopulation = new ArrayList<Cromossomo>();
             /// linha abaixo temporaria
-            newPopulation.add(this.pop.get(0));
+            //newPopulation.add(this.pop.get(0));
             for (int popIterator = 1; popIterator < tamPop - 1; popIterator++) {
 
                 /* MOVE PREY 1 to N-2. */
@@ -94,7 +97,7 @@ public class PresaPredador {
                     /* TODO : call run method. */
                     //System.out.println("Choose to run");
                     Cromossomo newIt = calculaDirecaoRun(popIterator);
-                     avaliaCromossomoDiferenca(newIt, gerador);
+                    avaliaCromossomoDiferenca(newIt, gerador);
                     newPopulation.add(newIt);
                 }
             }
@@ -104,16 +107,19 @@ public class PresaPredador {
             avaliaCromossomoDiferenca(newPredator, gerador);
             newPopulation.add(newPredator);
 
-//            bestAfterGRASP = BuscaLocal.runGRASP2(pop, gerador, granularidade);
-//            avaliaCromossomoDiferenca(bestAfterGRASP, gerador);
-//            newPopulation.add(bestAfterGRASP);
-//            /**
-//             * se a diferença que o melhor idividuo tinha for maior que a do
-//             * novo depois do GRASP, atualizar o melhor individuo.
-//             */
-//            if (this.bestIndividual.getDiferenca().compareTo(bestAfterGRASP.getDiferenca()) > 0) {
-//                this.bestIndividual = bestAfterGRASP;
-//            }
+            System.out.println("GRASP in:" + this.pop.get(0).getDiferenca());
+            bestAfterGRASP = BuscaLocal.runGRASP2(pop, gerador, granularidade);
+            avaliaCromossomoDiferenca(bestAfterGRASP, gerador);
+            newPopulation.add(bestAfterGRASP);
+            System.out.println("GRASP in:" + bestAfterGRASP.getDiferenca());
+
+            /**
+             * se a diferença que o melhor idividuo tinha for maior que a do
+             * novo depois do GRASP, atualizar o melhor individuo.
+             */
+            if (this.bestIndividual.getDiferenca().compareTo(bestAfterGRASP.getDiferenca()) > 0) {
+                this.bestIndividual = bestAfterGRASP;
+            }
             this.pop = newPopulation;
             ordenaPorFitness();
 
@@ -153,7 +159,7 @@ public class PresaPredador {
 
     public BigDecimal getSurvivorValue(int indice) {
         if (indice > -1 && indice < this.pop.size()) {
-            return BigDecimal.ONE.divide(pop.get(indice).getDiferenca(), 8, RoundingMode.HALF_UP);
+            return BigDecimal.TEN.divide(pop.get(indice).getDiferenca(), 8, RoundingMode.HALF_UP);
         }
         return null;
     }
@@ -163,7 +169,7 @@ public class PresaPredador {
      */
     public BigDecimal getSurvivorValue(Cromossomo c) {
         if (c != null) {
-            return BigDecimal.ONE.divide(c.getDiferenca(), 8, RoundingMode.HALF_UP);
+            return BigDecimal.TEN.divide(c.getDiferenca(), 8, RoundingMode.HALF_UP);
         }
         return null;
     }
@@ -203,7 +209,7 @@ public class PresaPredador {
         for (int i = 0; i < this.gerador.getNumeroDeGenes(); i++) {
             novaPresa.genes.get(i).replaceValor(Math.abs((novaPresa.genes.get(i).getValor() + direcaoFinal[i].getValor()) * passos));
         }
-        
+
         return novaPresa;///TESTAR
     }
 
@@ -220,15 +226,32 @@ public class PresaPredador {
             direcao[i] = new Gene(0);
         }
 
+        double distancia, pow;
+
         // indice > 0 porque a melhor presa não caminha
         if (indice > 0 && indice < this.pop.size()) {
             // para cada presa cuja sobrevivencia é melhor que a minha
             for (int j = 0; j < indice; j++) {
                 //double NexpDivDist = pow(N, this.getSurvivorValue(j).doubleValue()) / distanciaEuclidiana(this.pop.get(indice), this.pop.get(j));
-                double NexpDivDist = Math.exp(pow(this.getSurvivorValue(j).doubleValue(), this.Tau) - distanciaEuclidiana(this.pop.get(indice), this.pop.get(j)));
+                //BigDecimal NexpDivDist = new BigDecimal(Math.exp(pow(this.getSurvivorValue(j).doubleValue(), this.Tau) - distanciaEuclidiana(this.pop.get(indice), this.pop.get(j))));
+                distancia = distanciaEuclidiana(this.pop.get(indice), this.pop.get(j));
+                pow = pow(this.getSurvivorValue(j).doubleValue(), this.Tau);
+                double NexpDivDist = Math.exp(pow - distancia);
+                //System.out.println("dist :" + distancia + "| pow :" + pow + "| Nexp :" + NexpDivDist);
+
                 // para cada gene compartilhado
+                if (NexpDivDist == Double.NaN) {
+                    System.out.println("ka");
+                }
                 for (int geneIterator = 0; geneIterator < this.gerador.getNumeroDeGenes(); geneIterator++) {
-                    direcao[geneIterator].addValor(NexpDivDist * (this.pop.get(j).genes.get(geneIterator).getValor() - this.pop.get(indice).genes.get(geneIterator).getValor()));
+                    double Xj = this.pop.get(j).genes.get(geneIterator).getValor();
+                    double Xi = this.pop.get(indice).genes.get(geneIterator).getValor();
+                    //System.out.println("Xj :" + Xj + "| Xi :" + Xi + "| Nexp :" + NexpDivDist);
+                    direcao[geneIterator].addValor(NexpDivDist * (Xj - Xi));
+//                    BigDecimal Xj = new BigDecimal(this.pop.get(j).genes.get(geneIterator).getValor());
+//                    BigDecimal Xi = new BigDecimal(this.pop.get(indice).genes.get(geneIterator).getValor());
+//                    System.out.println("Xj :" + Xj + "| Xi :" + Xi + "| Nexp :" + NexpDivDist);
+//                    direcao[geneIterator].addBigValor(NexpDivDist.multiply(Xj.subtract(Xi)));
                 }
             }
         }

@@ -27,9 +27,15 @@ public class Gene implements Serializable{
 	}
 
         public void addValor(double valor) {
+            //System.out.println("valor :"+ this.valor);
             this.valor = this.valor.add(BigDecimal.valueOf(valor));
         }
 
+        public void addBigValor(BigDecimal valor) {
+            //System.out.println("valor :"+ this.valor);
+            this.valor = this.valor.add(valor);
+        }
+        
         public void subtValor(double valor) {
             this.valor = this.valor.subtract(BigDecimal.valueOf(valor));
         }
