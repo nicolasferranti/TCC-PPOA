@@ -31,7 +31,7 @@ public class PresaPredador {
     private int tamPop;
     private double CHANCE_TO_FOLLOW = 0.5;
     
-    private double EpsonDiff = 0.00001;
+    private double EpsonDiff = 0.000000001;
 
     /**
      * constantes do cálculo da direção se N é usado, então Tau nao é.
@@ -40,8 +40,9 @@ public class PresaPredador {
     private double Tau = 0.1;
 
     // constantes do cáculo do passo
-    private double LambdaMAX = 50;
+    private double LambdaMAX = 20;
     private double LambdaMIN = 1;
+    //random entre 0 e 1 
     private double Eps;
     private double Beta = 0;
     private double w = 1;
@@ -84,7 +85,7 @@ public class PresaPredador {
 
             newPopulation = new ArrayList<Cromossomo>();
             /// linha abaixo temporaria
-            //newPopulation.add(this.pop.get(0));
+            newPopulation.add(this.pop.get(0));
             for (int popIterator = 1; popIterator < tamPop - 1; popIterator++) {
 
                 /* MOVE PREY 1 to N-2. */
@@ -107,19 +108,19 @@ public class PresaPredador {
             avaliaCromossomoDiferenca(newPredator, gerador);
             newPopulation.add(newPredator);
 
-            System.out.println("GRASP in:" + this.pop.get(0).getDiferenca());
-            bestAfterGRASP = BuscaLocal.runGRASP2(pop, gerador, granularidade);
-            avaliaCromossomoDiferenca(bestAfterGRASP, gerador);
-            newPopulation.add(bestAfterGRASP);
-            System.out.println("GRASP in:" + bestAfterGRASP.getDiferenca());
-
-            /**
-             * se a diferença que o melhor idividuo tinha for maior que a do
-             * novo depois do GRASP, atualizar o melhor individuo.
-             */
-            if (this.bestIndividual.getDiferenca().compareTo(bestAfterGRASP.getDiferenca()) > 0) {
-                this.bestIndividual = bestAfterGRASP;
-            }
+//            System.out.println("GRASP in:" + this.pop.get(0).getDiferenca());
+//            bestAfterGRASP = BuscaLocal.runGRASP2(pop, gerador, granularidade);
+//            avaliaCromossomoDiferenca(bestAfterGRASP, gerador);
+//            newPopulation.add(bestAfterGRASP);
+//            System.out.println("GRASP in:" + bestAfterGRASP.getDiferenca());
+//
+//            /**
+//             * se a diferença que o melhor idividuo tinha for maior que a do
+//             * novo depois do GRASP, atualizar o melhor individuo.
+//             */
+//            if (this.bestIndividual.getDiferenca().compareTo(bestAfterGRASP.getDiferenca()) > 0) {
+//                this.bestIndividual = bestAfterGRASP;
+//            }
             this.pop = newPopulation;
             ordenaPorFitness();
 
