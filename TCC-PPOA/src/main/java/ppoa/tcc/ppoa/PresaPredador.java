@@ -44,7 +44,7 @@ public class PresaPredador {
     private double LambdaMIN = 1;
     //random entre 0 e 1 
     private double Eps;
-    private double Beta = 0;
+    private double Beta = 1; // paper colocou Beta=1 e w=1
     private double w = 1;
 
     // melhor presa 

@@ -5,3 +5,5 @@ $ mvn deploy:deploy-file -Dfile=/home/nicolasferranti/Documentos/TCC-Nicolas/TCC
 
 $ mvn deploy:deploy-file -Dfile=/home/nicolasferranti/Documentos/TCC-Nicolas/TCC-PPOA/lib/procalign.jar -DgroupId=fr.inrialpes.exmo -DartifactId=align.parser -Dversion=1.0 -Dpackaging=jar -Durl=file:./maven-repository/ -DrepositoryId=maven-repository -DupdateReleaseInfo=true
 
+$ mvn deploy:deploy-file -Dfile=/home/nicolasferranti/Documentos/TCC-Nicolas/TCC-PPOA/lib/rdfparser.jar -DgroupId=org.semanticweb -DartifactId=io.owl_rdf -Dversion=2.0 -Dpackaging=jar -Durl=file:./maven-repository/ -DrepositoryId=maven-repository -DupdateReleaseInfo=true
+

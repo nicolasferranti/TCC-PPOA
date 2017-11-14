@@ -52,8 +52,8 @@
         </container>
     </container>
     <ontologies> 
-        <ontology id="/home/jairo/Dropbox/documentos/Acadêmicos/Doutorado/Fase_final/Avaliacao/Teste/benchmarks/101/onto.rdf"></ontology> 
-        <ontology id="/home/jairo/Dropbox/documentos/Acadêmicos/Doutorado/Fase_final/Avaliacao/Teste/benchmarks/101/onto.rdf"></ontology> 
+        <ontology id="xml/onto.rdf"></ontology> 
+        <ontology id="xml/onto.rdf"></ontology> 
 	<!-- If pre-alignment element is filled, thus the weights above will not be used by application -->
         <pre-alignment>xml/benchmark/prealign101.rdf</pre-alignment>
     </ontologies> 

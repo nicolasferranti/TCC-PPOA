@@ -92,7 +92,7 @@ public class MatcherBenchmak2007 {
         }
     }
 
-    private StringBuffer showPrecisionRecall(int testNumber, OWLOntology O1, OWLOntology O2, Alignment al) throws ParserConfigurationException, IOException, AlignmentException, SAXException {
+    public StringBuffer showPrecisionRecall(int testNumber, OWLOntology O1, OWLOntology O2, Alignment al) throws ParserConfigurationException, IOException, AlignmentException, SAXException {
         //Agora somente imprime os valores de precisao e recall encontrados
         ArrayList<String[]> expectedAlign = new ArrayList<String[]>();
 

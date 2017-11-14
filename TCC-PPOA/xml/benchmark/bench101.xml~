@@ -27,7 +27,7 @@
             </function>
         </container> 
         <container name="FuncoesPropriedades" weight="0.2">
-            <!--function weight="0.2">
+            <function weight="0.2">
                  <class>br.ufjf.ontology.gnosis.similarity.structure.DirectDataTypePropertybyRangeSimilarity</class>
                  <penalty>0.0</penalty> 
             </function> 
@@ -42,7 +42,7 @@
                  <combination>br.ufjf.ontology.gnosis.similarity.combination.DeepCombination</combination>
                  <strategy>br.ufjf.ontology.gnosis.similarity.editdistance.DamerauLevenshteinEditDistance</strategy>
                  <penalty>0.0</penalty> 
-            </function-->
+            </function>
             <function weight="0.3">
                  <class>br.ufjf.ontology.gnosis.similarity.structure.DirectObjectPropertybyNameSimilarity</class>
                  <combination>br.ufjf.ontology.gnosis.similarity.combination.DeepCombination</combination>
@@ -52,8 +52,8 @@
         </container>
     </container>
     <ontologies> 
-        <ontology id="/home/jairo/Dropbox/documentos/Acadêmicos/Doutorado/Fase_final/Avaliacao/Teste/benchmarks/101/onto.rdf"></ontology> 
-        <ontology id="/home/jairo/Dropbox/documentos/Acadêmicos/Doutorado/Fase_final/Avaliacao/Teste/benchmarks/101/onto.rdf"></ontology> 
+        <ontology id="xml/onto.rdf"></ontology> 
+        <ontology id="xml/onto.rdf"></ontology> 
 	<!-- If pre-alignment element is filled, thus the weights above will not be used by application -->
         <pre-alignment>xml/benchmark/prealign101.rdf</pre-alignment>
     </ontologies> 
