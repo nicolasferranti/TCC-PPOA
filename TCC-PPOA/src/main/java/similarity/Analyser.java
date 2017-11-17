@@ -52,7 +52,7 @@ public class Analyser {
 
             new PPConnectorUtil(file.getAbsolutePath(), conceitos1, conceitos2).setPesosToContainer(mainContainer);
         }
-        
+        /////////////////////////// Ta pra cima /\ o acesso ao melhor individuo
         processaSimilaridades(conceitos1, conceitos2, mainContainer);
 
         //mainContainer.setSimilarityTable(listaSimilaridades);

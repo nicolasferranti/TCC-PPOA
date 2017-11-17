@@ -24,8 +24,9 @@ import similarity.Analyser;
 public class Principal {
 
     public static void main(String[] args) throws Exception {
-        MatcherBenchmak2007 mb = new MatcherBenchmak2007("/home/nicolasferranti/Documentos/TCC-Nicolas/TCC-PPOA/xml/xml_benchmark_Nicolas.xml");
-        mb.runTest(101, "xml/xml_benchmark_Nicolas.xml", true);
+        MatcherBenchmak2007 mb = new MatcherBenchmak2007("/home/nicolasferranti/Documentos/TCC-Nicolas/TCC-PPOA/xml");
+        //mb.runTest(101, "xml/xml_benchmark_Nicolas.xml", true);
+        mb.runTest(304, "xml/benchmark/bench304.xml", true);
 //        MatcherBenchmak2007 mb = new MatcherBenchmak2007("").runTest(0, xmlFuncoes, true);
 //        System.out.println(mb.showPrecisionRecall(0, O1, O2, al));
 //        Analyser analyser = new Analyser("/home/nicolasferranti/Documentos/TCC-Nicolas/TCC-PPOA/xml/xml_benchmark_Nicolas.xml");

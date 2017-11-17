@@ -46,8 +46,8 @@
     </container> 
     <ontologies> 
         <ontology id="/home/jairo/Dropbox/documentos/Acadêmicos/Doutorado/Fase_final/Avaliacao/Teste/benchmarks/101/onto.rdf"></ontology> 
-        <ontology id="/home/jairo/Dropbox/documentos/Acadêmicos/Doutorado/Fase_final/Avaliacao/Teste/benchmarks/203/onto.rdf"></ontology> 
+        <ontology id="/home/jairo/Dropbox/documentos/Acadêmicos/Doutorado/Fase_final/Avaliacao/Teste/benchmarks/204/onto.rdf"></ontology> 
 	<!-- If pre-alignment element is filled, thus the weights above will not be used by application -->
-        <pre-alignment>xml/benchmark/prealign203.rdf</pre-alignment>
+        <pre-alignment>xml/benchmark/prealign204.rdf</pre-alignment>
     </ontologies> 
 </similarityCalc>

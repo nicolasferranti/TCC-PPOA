@@ -198,8 +198,9 @@ public class XMLReader  {
 
         //Carrega a ontologia
         //* EDITADO NICOLAS System.out.println("O1 :" +owlNome[0]);
-        m1.read("file:///home/nicolasferranti/NetBeansProjects/TCC-PPOA/" + owlNome[0],  null);
-        m2.read("file:///home/nicolasferranti/NetBeansProjects/TCC-PPOA/" + owlNome[1],  null);
+        ///home/nicolasferranti/Documentos/TCC-Nicolas/TCC-PPOA
+        m1.read("file:///home/nicolasferranti/Documentos/TCC-Nicolas/TCC-PPOA/" + owlNome[0],  null);
+        m2.read("file:///home/nicolasferranti/Documentos/TCC-Nicolas/TCC-PPOA/" + owlNome[1],  null);
 
         OntologyCache.setListaIndividuosOnto1(m1.listIndividuals().toList());
         OntologyCache.setListaIndividuosOnto2(m2.listIndividuals().toList());      

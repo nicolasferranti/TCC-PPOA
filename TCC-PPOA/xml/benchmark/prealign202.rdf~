@@ -5,13 +5,13 @@
   <level>0</level>
   <type>11</type>
   <onto1>http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf</onto1>
-  <onto2>http://oaei.ontologymatching.org/2007/benchmarks/201/onto.rdf</onto2>
+  <onto2>http://oaei.ontologymatching.org/2007/benchmarks/202/onto.rdf</onto2>
   <uri1>http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf</uri1>
-  <uri2>http://oaei.ontologymatching.org/2007/benchmarks/201/onto.rdf</uri2>
+  <uri2>http://oaei.ontologymatching.org/2007/benchmarks/202/onto.rdf</uri2>
   <map>
     <Cell>
       <entity1 rdf:resource="http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#PersonList"/>
-      <entity2 rdf:resource="http://oaei.ontologymatching.org/2007/benchmarks/201/onto.rdf#dsqdbz"/>
+      <entity2 rdf:resource="http://oaei.ontologymatching.org/2007/benchmarks/202/onto.rdf#dsqdbz"/>
       <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
       <relation>=</relation>
     </Cell>
@@ -19,7 +19,7 @@
   <map>
     <Cell>
       <entity1 rdf:resource="http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#Unpublished"/>
-      <entity2 rdf:resource="http://oaei.ontologymatching.org/2007/benchmarks/201/onto.rdf#zeadza"/>
+      <entity2 rdf:resource="http://oaei.ontologymatching.org/2007/benchmarks/202/onto.rdf#zeadza"/>
       <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
       <relation>=</relation>
     </Cell>
@@ -27,7 +27,7 @@
   <!--map>
     <Cell>
       <entity1 rdf:resource="http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#Address"/>
-      <entity2 rdf:resource="http://oaei.ontologymatching.org/2007/benchmarks/201/onto.rdf#qzddj"/>
+      <entity2 rdf:resource="http://oaei.ontologymatching.org/2007/benchmarks/202/onto.rdf#qzddj"/>
       <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
       <relation>=</relation>
     </Cell>
@@ -35,7 +35,7 @@
   <map>
     <Cell>
       <entity1 rdf:resource="http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#key"/>
-      <entity2 rdf:resource="http://oaei.ontologymatching.org/2007/benchmarks/201/onto.rdf#zdzbh"/>
+      <entity2 rdf:resource="http://oaei.ontologymatching.org/2007/benchmarks/202/onto.rdf#zdzbh"/>
       <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
       <relation>=</relation>
     </Cell>

@@ -81,7 +81,7 @@ public class Operadores {
 			equacaoAux.setPesos(c);
 
                         //calcula o resultado da função com os pesos aplicados
-                        somaAux = equacoes.get(i).calcula();
+                        somaAux = equacoes.get(i).calcula();  // peso*valor
 			
 			// Adiciona o valor do resultado da equaÃ§Ã£o i no cromossomo.
 			c.addResultado(somaAux);

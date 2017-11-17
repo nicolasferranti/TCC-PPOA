@@ -1,0 +1,1803 @@
+<html xmlns:bib="http://www.inrialpes.fr/exmo/papers" xmlns:datext="http://www.jclark.com/xt/java/java.util.Date" xmlns:datexa="xalan://java.util.Date" xmlns:units="http://visus.mit.edu/fontomri/0.01/units.owl#" xmlns:foaf="http://xmlns.com/foaf/0.1/#" xmlns:ical="http://www.w3.org/2002/12/cal/#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:wot="http://xmlns.com/wot/0.1/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dctype="http://purl.org/dc/dcmitype/" xmlns:bibtex="http://purl.org/net/nknouf/ns/bibtex#">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Wine Ontology</title>
+</head>
+<body bgcolor="ffffff">
+<h1>Wine Ontology</h1>
+<p></p>
+<p><i>An example OWL ontology</i><br>
+Author: <br>
+Contributor: <br>
+Date: <br>
+Version: </p>
+<h2>Classes</h2>
+<dl>
+<dt>
+<b><a name="Wine">Wine</a></b> (wine, <i>)</i>
+</dt>
+<dd>super: <i><a href="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PotableLiquid">http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PotableLiquid</a></i><br><ul>
+<li>
+<a href="#hasMaker">#hasMaker</a> [1 1] <i><a href="#Winery">#Winery</a></i><br>
+</li>
+<li>
+<a href="#madeFromGrape">#madeFromGrape</a> [1 +oo]</li>
+<li>
+<a href="#hasSugar">#hasSugar</a> [1 1]</li>
+<li>
+<a href="#hasFlavor">#hasFlavor</a> [1 1]</li>
+<li>
+<a href="#hasBody">#hasBody</a> [1 1]</li>
+<li>
+<a href="#hasColor">#hasColor</a> [1 1]</li>
+<li>
+<a href="#locatedIn">#locatedIn</a> (http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Region<br>) </li>
+</ul>
+<dl>
+<dt>
+<b><a name="LateHarvest">LateHarvest</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul>
+<li>
+<a href="#hasSugar">#hasSugar</a><dt>&lt;owl:hasValue@<a name="Sweet">Sweet</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasFlavor">#hasFlavor</a>  { <dt>&lt;owl:Thing@<a name="Moderate">Moderate</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="Strong">Strong</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li>
+</ul>
+<dl>
+<dt>
+<b><a name="Sauternes">Sauternes</a></b> (, <i>)</i>
+</dt>
+<dd>super: <i><a href="#Bordeaux">#Bordeaux</a></i><br><ul>
+<li>
+<a href="#locatedIn">#locatedIn</a><dt>&lt;owl:hasValue@<a name="SauterneRegion">SauterneRegion</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasBody">#hasBody</a><dt>&lt;owl:hasValue@<a name="Medium">Medium</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasColor">#hasColor</a><dt>&lt;owl:hasValue@<a name="White">White</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+</ul>
+<dl></dl>
+</dd>
+</dl>
+</dd>
+<dt>
+<b><a name="EarlyHarvest">EarlyHarvest</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul><li>
+<a href="#hasSugar">#hasSugar</a>  { <dt>&lt;owl:Thing@<a name="Dry">Dry</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="OffDry">OffDry</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="DessertWine">DessertWine</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul><li>
+<a href="#hasSugar">#hasSugar</a>  { <dt>&lt;owl:Thing@<a name="OffDry">OffDry</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="Sweet">Sweet</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li></ul>
+<dl>
+<dt>
+<b><a name="SweetRiesling">SweetRiesling</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul>
+<li>
+<a href="#hasBody">#hasBody</a><dt>&lt;owl:hasValue@<a name="Full">Full</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasFlavor">#hasFlavor</a>  { <dt>&lt;owl:Thing@<a name="Moderate">Moderate</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="Strong">Strong</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li>
+</ul>
+<dl></dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>
+<b><a name="Vintage">Vintage</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul><li>
+<a href="#hasVintageYear">#hasVintageYear</a> [1 1]</li></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="WineGrape">WineGrape</a></b> (, <i>)</i>
+</dt>
+<dd>super: <i><a href="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Grape">http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Grape</a></i><br><ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="WhiteWine">WhiteWine</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="WhiteTableWine">WhiteTableWine</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="WhiteNonSweetWine">WhiteNonSweetWine</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="WhiteLoire">WhiteLoire</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="#WhiteLoire">#WhiteLoire</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul><li>
+<a href="#madeFromGrape">#madeFromGrape</a>  { <dt>&lt;owl:Thing@<a name="CheninBlancGrape">CheninBlancGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="PinotBlancGrape">PinotBlancGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="SauvignonBlancGrape">SauvignonBlancGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="WhiteBurgundy">WhiteBurgundy</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="#WhiteBurgundy">#WhiteBurgundy</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul><li>
+<a href="#madeFromGrape">#madeFromGrape</a><dt>&lt;owl:hasValue@<a name="ChardonnayGrape">ChardonnayGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd> [0 1]</li></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="WhiteBordeaux">WhiteBordeaux</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="#WhiteBordeaux">#WhiteBordeaux</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul><li>
+<a href="#madeFromGrape">#madeFromGrape</a>  { <dt>&lt;owl:Thing@<a name="SemillonGrape">SemillonGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="SauvignonBlancGrape">SauvignonBlancGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="Region">Region</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="VintageYear">VintageYear</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="Zinfandel">Zinfandel</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="#Zinfandel">#Zinfandel</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul>
+<li>
+<a href="#hasColor">#hasColor</a><dt>&lt;owl:hasValue@<a name="Red">Red</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasSugar">#hasSugar</a><dt>&lt;owl:hasValue@<a name="Dry">Dry</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasBody">#hasBody</a>  { <dt>&lt;owl:Thing@<a name="Full">Full</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="Medium">Medium</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li>
+<li>
+<a href="#hasFlavor">#hasFlavor</a>  { <dt>&lt;owl:Thing@<a name="Moderate">Moderate</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="Strong">Strong</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li>
+</ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="Winery">Winery</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="WineDescriptor">WineDescriptor</a></b> (, <i>Made WineDescriptor unionType of tastes and color)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl>
+<dt>
+<b><a name="WineTaste">WineTaste</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl>
+<dt>
+<b><a name="WineSugar">WineSugar</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="WineFlavor">WineFlavor</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="WineBody">WineBody</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+</dl>
+</dd>
+<dt>
+<b><a name="WineColor">WineColor</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+</dl>
+</dd>
+<dt>
+<b><a name="Tours">Tours</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="#Tours">#Tours</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul><li>
+<a href="#madeFromGrape">#madeFromGrape</a><dt>&lt;owl:hasValue@<a name="CheninBlancGrape">CheninBlancGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd> [0 1]</li></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="TableWine">TableWine</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="SweetWine">SweetWine</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="StEmilion">StEmilion</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul>
+<li>
+<a href="#hasColor">#hasColor</a><dt>&lt;owl:hasValue@<a name="Red">Red</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasFlavor">#hasFlavor</a><dt>&lt;owl:hasValue@<a name="Strong">Strong</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#madeFromGrape">#madeFromGrape</a><dt>&lt;owl:hasValue@<a name="CabernetSauvignonGrape">CabernetSauvignonGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd> [0 1]</li>
+</ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="SemillonOrSauvignonBlanc">SemillonOrSauvignonBlanc</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul>
+<li>
+<a href="#hasColor">#hasColor</a><dt>&lt;owl:hasValue@<a name="White">White</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasBody">#hasBody</a>  { <dt>&lt;owl:Thing@<a name="Medium">Medium</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="Full">Full</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li>
+</ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="Semillon">Semillon</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="SauvignonBlanc">SauvignonBlanc</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="Sancerre">Sancerre</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul>
+<li>
+<a href="#hasBody">#hasBody</a><dt>&lt;owl:hasValue@<a name="Medium">Medium</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasSugar">#hasSugar</a><dt>&lt;owl:hasValue@<a name="OffDry">OffDry</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasFlavor">#hasFlavor</a><dt>&lt;owl:hasValue@<a name="Delicate">Delicate</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#madeFromGrape">#madeFromGrape</a><dt>&lt;owl:hasValue@<a name="SauvignonBlancGrape">SauvignonBlancGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd> [0 1]</li>
+</ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="RoseWine">RoseWine</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="Riesling">Riesling</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul><li>
+<a href="#hasColor">#hasColor</a><dt>&lt;owl:hasValue@<a name="White">White</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="RedWine">RedWine</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl>
+<dt>
+<b><a name="Port">Port</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul>
+<li>
+<a href="#locatedIn">#locatedIn</a><dt>&lt;owl:hasValue@<a name="PortugalRegion">PortugalRegion</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasBody">#hasBody</a><dt>&lt;owl:hasValue@<a name="Full">Full</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasFlavor">#hasFlavor</a><dt>&lt;owl:hasValue@<a name="Strong">Strong</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasSugar">#hasSugar</a><dt>&lt;owl:hasValue@<a name="Sweet">Sweet</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+</ul>
+<dl></dl>
+</dd>
+</dl>
+</dd>
+<dt>
+<b><a name="RedTableWine">RedTableWine</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="RedBurgundy">RedBurgundy</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul><li>
+<a href="#madeFromGrape">#madeFromGrape</a><dt>&lt;owl:hasValue@<a name="PinotNoirGrape">PinotNoirGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd> [0 1]</li></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="RedBordeaux">RedBordeaux</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul><li>
+<a href="#madeFromGrape">#madeFromGrape</a>  { <dt>&lt;owl:Thing@<a name="CabernetSauvignonGrape">CabernetSauvignonGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="MerlotGrape">MerlotGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="PinotNoir">PinotNoir</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul><li>
+<a href="#hasColor">#hasColor</a><dt>&lt;owl:hasValue@<a name="Red">Red</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="PinotBlanc">PinotBlanc</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul><li>
+<a href="#hasColor">#hasColor</a><dt>&lt;owl:hasValue@<a name="White">White</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="PetiteSyrah">PetiteSyrah</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul>
+<li>
+<a href="#hasColor">#hasColor</a><dt>&lt;owl:hasValue@<a name="Red">Red</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasSugar">#hasSugar</a><dt>&lt;owl:hasValue@<a name="Dry">Dry</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasFlavor">#hasFlavor</a>  { <dt>&lt;owl:Thing@<a name="Moderate">Moderate</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="Strong">Strong</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li>
+<li>
+<a href="#hasBody">#hasBody</a>  { <dt>&lt;owl:Thing@<a name="Medium">Medium</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="Full">Full</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li>
+</ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="Pauillac">Pauillac</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul>
+<li>
+<a href="#hasBody">#hasBody</a><dt>&lt;owl:hasValue@<a name="Full">Full</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasFlavor">#hasFlavor</a><dt>&lt;owl:hasValue@<a name="Strong">Strong</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#madeFromGrape">#madeFromGrape</a><dt>&lt;owl:hasValue@<a name="CabernetSauvignonGrape">CabernetSauvignonGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd> [0 1]</li>
+</ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="Muscadet">Muscadet</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul>
+<li>
+<a href="#hasBody">#hasBody</a><dt>&lt;owl:hasValue@<a name="Light">Light</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasFlavor">#hasFlavor</a><dt>&lt;owl:hasValue@<a name="Delicate">Delicate</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasSugar">#hasSugar</a><dt>&lt;owl:hasValue@<a name="Dry">Dry</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#madeFromGrape">#madeFromGrape</a><dt>&lt;owl:hasValue@<a name="PinotBlancGrape">PinotBlancGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd> [0 1]</li>
+</ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="Meursault">Meursault</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul><li>
+<a href="#hasBody">#hasBody</a><dt>&lt;owl:hasValue@<a name="Full">Full</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="Merlot">Merlot</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul>
+<li>
+<a href="#hasColor">#hasColor</a><dt>&lt;owl:hasValue@<a name="Red">Red</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasSugar">#hasSugar</a><dt>&lt;owl:hasValue@<a name="Dry">Dry</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasFlavor">#hasFlavor</a>  { <dt>&lt;owl:Thing@<a name="Moderate">Moderate</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="Delicate">Delicate</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li>
+<li>
+<a href="#hasBody">#hasBody</a>  { <dt>&lt;owl:Thing@<a name="Light">Light</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="Medium">Medium</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li>
+</ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="Meritage">Meritage</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul><li>
+<a href="#hasColor">#hasColor</a><dt>&lt;owl:hasValue@<a name="Red">Red</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="Medoc">Medoc</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul>
+<li>
+<a href="#hasColor">#hasColor</a><dt>&lt;owl:hasValue@<a name="Red">Red</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasSugar">#hasSugar</a><dt>&lt;owl:hasValue@<a name="Dry">Dry</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+</ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="Margaux">Margaux</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul>
+<li>
+<a href="#hasFlavor">#hasFlavor</a><dt>&lt;owl:hasValue@<a name="Delicate">Delicate</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#madeFromGrape">#madeFromGrape</a><dt>&lt;owl:hasValue@<a name="MerlotGrape">MerlotGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd> [0 1]</li>
+</ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="Loire">Loire</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="ItalianWine">ItalianWine</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl>
+<dt>
+<b><a name="Chianti">Chianti</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul>
+<li>
+<a href="#locatedIn">#locatedIn</a><dt>&lt;owl:hasValue@<a name="ChiantiRegion">ChiantiRegion</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasColor">#hasColor</a><dt>&lt;owl:hasValue@<a name="Red">Red</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#madeFromGrape">#madeFromGrape</a><dt>&lt;owl:hasValue@<a name="SangioveseGrape">SangioveseGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasFlavor">#hasFlavor</a><dt>&lt;owl:hasValue@<a name="Moderate">Moderate</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasSugar">#hasSugar</a><dt>&lt;owl:hasValue@<a name="Dry">Dry</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasBody">#hasBody</a>  { <dt>&lt;owl:Thing@<a name="Light">Light</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="Medium">Medium</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li>
+</ul>
+<dl></dl>
+</dd>
+</dl>
+</dd>
+<dt>
+<b><a name="IceWine">IceWine</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul>
+<li>
+<a href="#hasBody">#hasBody</a>  { <dt>&lt;owl:Thing@<a name="Medium">Medium</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="Full">Full</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li>
+<li>
+<a href="#hasFlavor">#hasFlavor</a>  { <dt>&lt;owl:Thing@<a name="Moderate">Moderate</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="Strong">Strong</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li>
+</ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="GermanWine">GermanWine</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="Gamay">Gamay</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="FullBodiedWine">FullBodiedWine</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="FrenchWine">FrenchWine</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="DryWine">DryWine</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="DryWhiteWine">DryWhiteWine</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="DryRiesling">DryRiesling</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul>
+<li>
+<a href="#hasColor">#hasColor</a><dt>&lt;owl:hasValue@<a name="White">White</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasFlavor">#hasFlavor</a><dt>&lt;owl:hasValue@<a name="Delicate">Delicate</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasBody">#hasBody</a>  { <dt>&lt;owl:Thing@<a name="Light">Light</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="Medium">Medium</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li>
+</ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="DryRedWine">DryRedWine</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="CotesDOr">CotesDOr</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul><li>
+<a href="#hasFlavor">#hasFlavor</a><dt>&lt;owl:hasValue@<a name="Moderate">Moderate</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="CheninBlanc">CheninBlanc</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul>
+<li>
+<a href="#hasColor">#hasColor</a><dt>&lt;owl:hasValue@<a name="White">White</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasFlavor">#hasFlavor</a><dt>&lt;owl:hasValue@<a name="Moderate">Moderate</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasBody">#hasBody</a>  { <dt>&lt;owl:Thing@<a name="Full">Full</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="Medium">Medium</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li>
+<li>
+<a href="#hasSugar">#hasSugar</a>  { <dt>&lt;owl:Thing@<a name="Dry">Dry</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="OffDry">OffDry</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li>
+</ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="Chardonnay">Chardonnay</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul>
+<li>
+<a href="#hasColor">#hasColor</a><dt>&lt;owl:hasValue@<a name="White">White</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasBody">#hasBody</a>  { <dt>&lt;owl:Thing@<a name="Full">Full</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="Medium">Medium</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li>
+<li>
+<a href="#hasFlavor">#hasFlavor</a>  { <dt>&lt;owl:Thing@<a name="Strong">Strong</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="Moderate">Moderate</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li>
+</ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="CaliforniaWine">CaliforniaWine</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="TexasWine">TexasWine</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="CabernetSauvignon">CabernetSauvignon</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul>
+<li>
+<a href="#hasColor">#hasColor</a><dt>&lt;owl:hasValue@<a name="Red">Red</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasSugar">#hasSugar</a><dt>&lt;owl:hasValue@<a name="Dry">Dry</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasFlavor">#hasFlavor</a>  { <dt>&lt;owl:Thing@<a name="Moderate">Moderate</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="Strong">Strong</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li>
+<li>
+<a href="#hasBody">#hasBody</a>  { <dt>&lt;owl:Thing@<a name="Medium">Medium</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;owl:Thing@<a name="Full">Full</a>&gt;</dt>
+<dd><ul compact></ul></dd> } <br>
+</li>
+</ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="CabernetFranc">CabernetFranc</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul>
+<li>
+<a href="#hasColor">#hasColor</a><dt>&lt;owl:hasValue@<a name="Red">Red</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasFlavor">#hasFlavor</a><dt>&lt;owl:hasValue@<a name="Moderate">Moderate</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasBody">#hasBody</a><dt>&lt;owl:hasValue@<a name="Medium">Medium</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasSugar">#hasSugar</a><dt>&lt;owl:hasValue@<a name="Dry">Dry</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+</ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="Burgundy">Burgundy</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul><li>
+<a href="#hasSugar">#hasSugar</a><dt>&lt;owl:hasValue@<a name="Dry">Dry</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="Bordeaux">Bordeaux</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl>
+<dt>
+<b><a name="Sauternes">Sauternes</a></b> (, <i>)</i>
+</dt>
+<dd>super: <i><a href="#LateHarvest">#LateHarvest</a></i><br><ul>
+<li>
+<a href="#locatedIn">#locatedIn</a><dt>&lt;owl:hasValue@<a name="SauterneRegion">SauterneRegion</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasBody">#hasBody</a><dt>&lt;owl:hasValue@<a name="Medium">Medium</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasColor">#hasColor</a><dt>&lt;owl:hasValue@<a name="White">White</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+</ul>
+<dl></dl>
+</dd>
+</dl>
+</dd>
+<dt>
+<b><a name="Beaujolais">Beaujolais</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul>
+<li>
+<a href="#hasColor">#hasColor</a><dt>&lt;owl:hasValue@<a name="Red">Red</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasBody">#hasBody</a><dt>&lt;owl:hasValue@<a name="Light">Light</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasSugar">#hasSugar</a><dt>&lt;owl:hasValue@<a name="Dry">Dry</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasFlavor">#hasFlavor</a><dt>&lt;owl:hasValue@<a name="Delicate">Delicate</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#madeFromGrape">#madeFromGrape</a><dt>&lt;owl:hasValue@<a name="GamayGrape">GamayGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd> [0 1]</li>
+</ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="Anjou">Anjou</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul>
+<li>
+<a href="#hasColor">#hasColor</a><dt>&lt;owl:hasValue@<a name="Rose">Rose</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasBody">#hasBody</a><dt>&lt;owl:hasValue@<a name="Light">Light</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasFlavor">#hasFlavor</a><dt>&lt;owl:hasValue@<a name="Delicate">Delicate</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+<li>
+<a href="#hasSugar">#hasSugar</a><dt>&lt;owl:hasValue@<a name="OffDry">OffDry</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li>
+</ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="AmericanWine">AmericanWine</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+<dt>
+<b><a name="AlsatianWine">AlsatianWine</a></b> (, <i>)</i>
+</dt>
+<dd>
+<ul></ul>
+<dl></dl>
+</dd>
+</dl>
+<h2>Properties</h2>
+<dl>
+<dt>
+<b><a name="locatedIn">locatedIn</a></b>:
+     <a href="http://www.w3.org/2002/07/owl#Thing">http://www.w3.org/2002/07/owl#Thing</a> -&gt;  <a href="#Region">#Region</a><i> ()</i>
+</dt>
+<dd><dl></dl></dd>
+<dt>
+<b><a name="adjacentRegion">adjacentRegion</a></b>:
+     <a href="#Region">#Region</a> -&gt;  <a href="#Region">#Region</a><i> ()</i>
+</dt>
+<dd><dl></dl></dd>
+<dt>
+<b><a name="hasVintageYear">hasVintageYear</a></b>:
+     <a href="#Vintage">#Vintage</a> -&gt;  <a href="#VintageYear">#VintageYear</a><i> ()</i>
+</dt>
+<dd><dl></dl></dd>
+<dt>
+<b><a name="madeFromGrape">madeFromGrape</a></b>:
+     <a href="#Wine">#Wine</a> -&gt;  <a href="#WineGrape">#WineGrape</a><i> ()</i>
+</dt>
+<dd><dl></dl></dd>
+<dt>
+<b><a name="madeIntoWine">madeIntoWine</a></b>:
+    _ -&gt; _<i> ()</i>
+</dt>
+<dd><dl></dl></dd>
+<dt>
+<b><a name="hasWineDescriptor">hasWineDescriptor</a></b>:
+     <a href="#Wine">#Wine</a> -&gt;  <a href="#WineDescriptor">#WineDescriptor</a><i> ()</i>
+</dt>
+<dd><dl>
+<dt>
+<b><a name="hasSugar">hasSugar</a></b>:
+    _ -&gt;  <a href="#WineSugar">#WineSugar</a><i> ()</i>
+</dt>
+<dd><dl></dl></dd>
+<dt>
+<b><a name="hasBody">hasBody</a></b>:
+    _ -&gt;  <a href="#WineBody">#WineBody</a><i> ()</i>
+</dt>
+<dd><dl></dl></dd>
+<dt>
+<b><a name="hasFlavor">hasFlavor</a></b>:
+    _ -&gt;  <a href="#WineFlavor">#WineFlavor</a><i> ()</i>
+</dt>
+<dd><dl></dl></dd>
+<dt>
+<b><a name="hasColor">hasColor</a></b>:
+     <a href="#Wine">#Wine</a> -&gt;  <a href="#WineColor">#WineColor</a><i> ()</i>
+</dt>
+<dd><dl></dl></dd>
+</dl></dd>
+<dt>
+<b><a name="hasMaker">hasMaker</a></b>:
+    _ -&gt; _<i> ()</i>
+</dt>
+<dd><dl></dl></dd>
+<dt>
+<b><a name="producesWine">producesWine</a></b>:
+    _ -&gt; _<i> ()</i>
+</dt>
+<dd><dl></dl></dd>
+</dl>
+<dl>
+<dt>
+<b><a name="yearValue">yearValue</a></b> <a href="#VintageYear">#VintageYear</a> -&gt;  <a href="http://www.w3.org/2001/XMLSchema#positiveInteger">http://www.w3.org/2001/XMLSchema#positiveInteger</a><i> ()</i>
+</dt>
+<dd><dl></dl></dd>
+</dl>
+<h2>Individuals</h2>
+<dl>
+<dt>&lt;VintageYear@<a name="Year1998">Year1998</a>&gt;</dt>
+<dd><ul compact><li>yearValue = '1998'</li></ul></dd>
+<dt>&lt;Region@<a name="USRegion">USRegion</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Region@<a name="MedocRegion">MedocRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#BordeauxRegion">#BordeauxRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Region@<a name="LoireRegion">LoireRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#FrenchRegion">#FrenchRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Region@<a name="ItalianRegion">ItalianRegion</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Region@<a name="FrenchRegion">FrenchRegion</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Region@<a name="CaliforniaRegion">CaliforniaRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#USRegion">#USRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Region@<a name="TexasRegion">TexasRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#USRegion">#USRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Region@<a name="BourgogneRegion">BourgogneRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#FrenchRegion">#FrenchRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Region@<a name="BordeauxRegion">BordeauxRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#FrenchRegion">#FrenchRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Region@<a name="AustralianRegion">AustralianRegion</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;WineBody@<a name="Full">Full</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;WineBody@<a name="Medium">Medium</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;WineBody@<a name="Light">Light</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;WineColor@<a name="Red">Red</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;WineColor@<a name="Rose">Rose</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;WineColor@<a name="White">White</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;WineFlavor@<a name="Strong">Strong</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;WineFlavor@<a name="Moderate">Moderate</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;WineFlavor@<a name="Delicate">Delicate</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;WineSugar@<a name="Dry">Dry</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;WineSugar@<a name="OffDry">OffDry</a>&gt;</dt>
+<dd><ul compact>
+<li>owl:differentFrom = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>owl:differentFrom = &lt;_@<a href="#Sweet">#Sweet</a>&gt;</li>
+</ul></dd>
+<dt>&lt;WineSugar@<a name="Sweet">Sweet</a>&gt;</dt>
+<dd><ul compact><li>owl:differentFrom = &lt;_@<a href="#Dry">#Dry</a>&gt;</li></ul></dd>
+<dt>&lt;owl:AllDifferent@<a name=""></a>&gt;</dt>
+<dd><ul compact><li>owl:distinctMembers = <dt>&lt;vin:WineColor@<a name="Red">Red</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:WineColor@<a name="White">White</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:WineColor@<a name="Rose">Rose</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li></ul></dd>
+<dt>&lt;owl:AllDifferent@<a name=""></a>&gt;</dt>
+<dd><ul compact><li>owl:distinctMembers = <dt>&lt;vin:WineBody@<a name="Light">Light</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:WineBody@<a name="Medium">Medium</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:WineBody@<a name="Full">Full</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li></ul></dd>
+<dt>&lt;owl:AllDifferent@<a name=""></a>&gt;</dt>
+<dd><ul compact><li>owl:distinctMembers = <dt>&lt;vin:WineFlavor@<a name="Delicate">Delicate</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:WineFlavor@<a name="Moderate">Moderate</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:WineFlavor@<a name="Strong">Strong</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li></ul></dd>
+<dt>&lt;owl:AllDifferent@<a name=""></a>&gt;</dt>
+<dd><ul compact><li>owl:distinctMembers = <dt>&lt;vin:WineSugar@<a name="Sweet">Sweet</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:WineSugar@<a name="OffDry">OffDry</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:WineSugar@<a name="Dry">Dry</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li></ul></dd>
+<dt>&lt;Region@<a name="AlsaceRegion">AlsaceRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#FrenchRegion">#FrenchRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Region@<a name="AnjouRegion">AnjouRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#LoireRegion">#LoireRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Region@<a name="ArroyoGrandeRegion">ArroyoGrandeRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#CaliforniaRegion">#CaliforniaRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Winery@<a name="Beringer">Beringer</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Winery@<a name="Bancroft">Bancroft</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Chardonnay@<a name="BancroftChardonnay">BancroftChardonnay</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#NapaRegion">#NapaRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#Bancroft">#Bancroft</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Region@<a name="BeaujolaisRegion">BeaujolaisRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#FrenchRegion">#FrenchRegion</a>&gt;</li></ul></dd>
+<dt>&lt;WineGrape@<a name="CabernetFrancGrape">CabernetFrancGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;WineGrape@<a name="CabernetSauvignonGrape">CabernetSauvignonGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Region@<a name="CentralCoastRegion">CentralCoastRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#CaliforniaRegion">#CaliforniaRegion</a>&gt;</li></ul></dd>
+<dt>&lt;WineGrape@<a name="ChardonnayGrape">ChardonnayGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Winery@<a name="ChateauChevalBlanc">ChateauChevalBlanc</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;StEmilion@<a name="ChateauChevalBlancStEmilion">ChateauChevalBlancStEmilion</a>&gt;</dt>
+<dd><ul compact><li>hasMaker = &lt;_@<a href="#ChateauChevalBlanc">#ChateauChevalBlanc</a>&gt;</li></ul></dd>
+<dt>&lt;Winery@<a name="ChateauDYchem">ChateauDYchem</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Sauternes@<a name="ChateauDYchemSauterne">ChateauDYchemSauterne</a>&gt;</dt>
+<dd><ul compact>
+<li>madeFromGrape = &lt;_@<a href="#SauvignonBlancGrape">#SauvignonBlancGrape</a>&gt;</li>
+<li>madeFromGrape = &lt;_@<a href="#SemillonGrape">#SemillonGrape</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Strong">#Strong</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#ChateauDYchem">#ChateauDYchem</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Winery@<a name="ChateauDeMeursault">ChateauDeMeursault</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Meursault@<a name="ChateauDeMeursaultMeursault">ChateauDeMeursaultMeursault</a>&gt;</dt>
+<dd><ul compact>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#ChateauDeMeursault">#ChateauDeMeursault</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Winery@<a name="ChateauLafiteRothschild">ChateauLafiteRothschild</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Pauillac@<a name="ChateauLafiteRothschildPauillac">ChateauLafiteRothschildPauillac</a>&gt;</dt>
+<dd><ul compact><li>hasMaker = &lt;_@<a href="#ChateauLafiteRothschild">#ChateauLafiteRothschild</a>&gt;</li></ul></dd>
+<dt>&lt;Margaux@<a name="ChateauMargaux">ChateauMargaux</a>&gt;</dt>
+<dd><ul compact><li>hasMaker = &lt;_@<a href="#ChateauMargauxWinery">#ChateauMargauxWinery</a>&gt;</li></ul></dd>
+<dt>&lt;Winery@<a name="ChateauMargauxWinery">ChateauMargauxWinery</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Winery@<a name="ChateauMorgon">ChateauMorgon</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Beaujolais@<a name="ChateauMorgonBeaujolais">ChateauMorgonBeaujolais</a>&gt;</dt>
+<dd><ul compact><li>hasMaker = &lt;_@<a href="#ChateauMorgon">#ChateauMorgon</a>&gt;</li></ul></dd>
+<dt>&lt;WineGrape@<a name="CheninBlancGrape">CheninBlancGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;WineGrape@<a name="ZinfandelGrape">ZinfandelGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Chianti@<a name="ChiantiClassico">ChiantiClassico</a>&gt;</dt>
+<dd><ul compact>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#McGuinnesso">#McGuinnesso</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Region@<a name="ChiantiRegion">ChiantiRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#ItalianRegion">#ItalianRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Winery@<a name="ClosDeLaPoussie">ClosDeLaPoussie</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Sancerre@<a name="ClosDeLaPoussieSancerre">ClosDeLaPoussieSancerre</a>&gt;</dt>
+<dd><ul compact><li>hasMaker = &lt;_@<a href="#ClosDeLaPoussie">#ClosDeLaPoussie</a>&gt;</li></ul></dd>
+<dt>&lt;Winery@<a name="ClosDeVougeot">ClosDeVougeot</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;CotesDOr@<a name="ClosDeVougeotCotesDOr">ClosDeVougeotCotesDOr</a>&gt;</dt>
+<dd><ul compact><li>hasMaker = &lt;_@<a href="#ClosDeVougeot">#ClosDeVougeot</a>&gt;</li></ul></dd>
+<dt>&lt;Winery@<a name="CongressSprings">CongressSprings</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Semillon@<a name="CongressSpringsSemillon">CongressSpringsSemillon</a>&gt;</dt>
+<dd><ul compact>
+<li>hasMaker = &lt;_@<a href="#CongressSprings">#CongressSprings</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Winery@<a name="Corbans">Corbans</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Riesling@<a name="CorbansDryWhiteRiesling">CorbansDryWhiteRiesling</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#NewZealandRegion">#NewZealandRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#Corbans">#Corbans</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#OffDry">#OffDry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;SauvignonBlanc@<a name="CorbansPrivateBinSauvignonBlanc">CorbansPrivateBinSauvignonBlanc</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#NewZealandRegion">#NewZealandRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#Corbans">#Corbans</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Strong">#Strong</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Full">#Full</a>&gt;</li>
+</ul></dd>
+<dt>&lt;SauvignonBlanc@<a name="CorbansSauvignonBlanc">CorbansSauvignonBlanc</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#NewZealandRegion">#NewZealandRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#Corbans">#Corbans</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Strong">#Strong</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Winery@<a name="CortonMontrachet">CortonMontrachet</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;WhiteBurgundy@<a name="CortonMontrachetWhiteBurgundy">CortonMontrachetWhiteBurgundy</a>&gt;</dt>
+<dd><ul compact>
+<li>hasMaker = &lt;_@<a href="#CortonMontrachet">#CortonMontrachet</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Strong">#Strong</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Full">#Full</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Region@<a name="CotesDOrRegion">CotesDOrRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#BourgogneRegion">#BourgogneRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Winery@<a name="Cotturi">Cotturi</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Zinfandel@<a name="CotturiZinfandel">CotturiZinfandel</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#SonomaRegion">#SonomaRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#Cotturi">#Cotturi</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Strong">#Strong</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Full">#Full</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Winery@<a name="DAnjou">DAnjou</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Region@<a name="EdnaValleyRegion">EdnaValleyRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#CaliforniaRegion">#CaliforniaRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Winery@<a name="Elyse">Elyse</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Zinfandel@<a name="ElyseZinfandel">ElyseZinfandel</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#NapaRegion">#NapaRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#Elyse">#Elyse</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Full">#Full</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Winery@<a name="Forman">Forman</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;CabernetSauvignon@<a name="FormanCabernetSauvignon">FormanCabernetSauvignon</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#NapaRegion">#NapaRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#Forman">#Forman</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Strong">#Strong</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Chardonnay@<a name="FormanChardonnay">FormanChardonnay</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#NapaRegion">#NapaRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#Forman">#Forman</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Full">#Full</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Winery@<a name="Foxen">Foxen</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;CheninBlanc@<a name="FoxenCheninBlanc">FoxenCheninBlanc</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#SantaBarbaraRegion">#SantaBarbaraRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#Foxen">#Foxen</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Full">#Full</a>&gt;</li>
+</ul></dd>
+<dt>&lt;WineGrape@<a name="GamayGrape">GamayGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Winery@<a name="GaryFarrell">GaryFarrell</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Merlot@<a name="GaryFarrellMerlot">GaryFarrellMerlot</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#SonomaRegion">#SonomaRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#GaryFarrell">#GaryFarrell</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Region@<a name="GermanyRegion">GermanyRegion</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Winery@<a name="Handley">Handley</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Winery@<a name="KalinCellars">KalinCellars</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Semillon@<a name="KalinCellarsSemillon">KalinCellarsSemillon</a>&gt;</dt>
+<dd><ul compact>
+<li>hasMaker = &lt;_@<a href="#KalinCellars">#KalinCellars</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Strong">#Strong</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Full">#Full</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Winery@<a name="KathrynKennedy">KathrynKennedy</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Meritage@<a name="KathrynKennedyLateral">KathrynKennedyLateral</a>&gt;</dt>
+<dd><ul compact>
+<li>hasMaker = &lt;_@<a href="#KathrynKennedy">#KathrynKennedy</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Delicate">#Delicate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Winery@<a name="LaneTanner">LaneTanner</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;PinotNoir@<a name="LaneTannerPinotNoir">LaneTannerPinotNoir</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#SantaBarbaraRegion">#SantaBarbaraRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#LaneTanner">#LaneTanner</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Delicate">#Delicate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Light">#Light</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Winery@<a name="Longridge">Longridge</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Merlot@<a name="LongridgeMerlot">LongridgeMerlot</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#NewZealandRegion">#NewZealandRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#Longridge">#Longridge</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Light">#Light</a>&gt;</li>
+</ul></dd>
+<dt>&lt;WineGrape@<a name="MalbecGrape">MalbecGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Region@<a name="MargauxRegion">MargauxRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#MedocRegion">#MedocRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Winery@<a name="Marietta">Marietta</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;CabernetSauvignon@<a name="MariettaCabernetSauvignon">MariettaCabernetSauvignon</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#SonomaRegion">#SonomaRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#Marietta">#Marietta</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;RedTableWine@<a name="MariettaOldVinesRed">MariettaOldVinesRed</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#SonomaRegion">#SonomaRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#Marietta">#Marietta</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;PetiteSyrah@<a name="MariettaPetiteSyrah">MariettaPetiteSyrah</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#SonomaRegion">#SonomaRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#Marietta">#Marietta</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Zinfandel@<a name="MariettaZinfandel">MariettaZinfandel</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#SonomaRegion">#SonomaRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#Marietta">#Marietta</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Winery@<a name="McGuinnesso">McGuinnesso</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Region@<a name="MendocinoRegion">MendocinoRegion</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#CaliforniaRegion">#CaliforniaRegion</a>&gt;</li>
+<li>adjacentRegion = &lt;_@<a href="#SonomaRegion">#SonomaRegion</a>&gt;</li>
+</ul></dd>
+<dt>&lt;WineGrape@<a name="MerlotGrape">MerlotGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Region@<a name="MeursaultRegion">MeursaultRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#BourgogneRegion">#BourgogneRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Winery@<a name="MountEdenVineyard">MountEdenVineyard</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Chardonnay@<a name="MountEdenVineyardEdnaValleyChardonnay">MountEdenVineyardEdnaValleyChardonnay</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#EdnaValleyRegion">#EdnaValleyRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#MountEdenVineyard">#MountEdenVineyard</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;PinotNoir@<a name="MountEdenVineyardEstatePinotNoir">MountEdenVineyardEstatePinotNoir</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#EdnaValleyRegion">#EdnaValleyRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#MountEdenVineyard">#MountEdenVineyard</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Strong">#Strong</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Full">#Full</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Winery@<a name="Mountadam">Mountadam</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Chardonnay@<a name="MountadamChardonnay">MountadamChardonnay</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#SouthAustraliaRegion">#SouthAustraliaRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#Mountadam">#Mountadam</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Strong">#Strong</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Full">#Full</a>&gt;</li>
+</ul></dd>
+<dt>&lt;PinotNoir@<a name="MountadamPinotNoir">MountadamPinotNoir</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#SouthAustraliaRegion">#SouthAustraliaRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#Mountadam">#Mountadam</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;DryRiesling@<a name="MountadamRiesling">MountadamRiesling</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#SouthAustraliaRegion">#SouthAustraliaRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#Mountadam">#Mountadam</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Delicate">#Delicate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Region@<a name="MuscadetRegion">MuscadetRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#LoireRegion">#LoireRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Region@<a name="NapaRegion">NapaRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#CaliforniaRegion">#CaliforniaRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Region@<a name="NewZealandRegion">NewZealandRegion</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Winery@<a name="PageMillWinery">PageMillWinery</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;CabernetSauvignon@<a name="PageMillWineryCabernetSauvignon">PageMillWineryCabernetSauvignon</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#NapaRegion">#NapaRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#PageMillWinery">#PageMillWinery</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Region@<a name="PauillacRegion">PauillacRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#MedocRegion">#MedocRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Winery@<a name="PeterMccoy">PeterMccoy</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Chardonnay@<a name="PeterMccoyChardonnay">PeterMccoyChardonnay</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#SonomaRegion">#SonomaRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#PeterMccoy">#PeterMccoy</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;WineGrape@<a name="PetiteSyrahGrape">PetiteSyrahGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;WineGrape@<a name="PetiteVerdotGrape">PetiteVerdotGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;WineGrape@<a name="PinotBlancGrape">PinotBlancGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;WineGrape@<a name="PinotNoirGrape">PinotNoirGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Region@<a name="PortugalRegion">PortugalRegion</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Winery@<a name="PulignyMontrachet">PulignyMontrachet</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;WhiteBurgundy@<a name="PulignyMontrachetWhiteBurgundy">PulignyMontrachetWhiteBurgundy</a>&gt;</dt>
+<dd><ul compact>
+<li>hasMaker = &lt;_@<a href="#PulignyMontrachet">#PulignyMontrachet</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;WineGrape@<a name="RieslingGrape">RieslingGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Anjou@<a name="RoseDAnjou">RoseDAnjou</a>&gt;</dt>
+<dd><ul compact><li>hasMaker = &lt;_@<a href="#DAnjou">#DAnjou</a>&gt;</li></ul></dd>
+<dt>&lt;Region@<a name="SancerreRegion">SancerreRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#LoireRegion">#LoireRegion</a>&gt;</li></ul></dd>
+<dt>&lt;WineGrape@<a name="SangioveseGrape">SangioveseGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Region@<a name="SantaBarbaraRegion">SantaBarbaraRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#CaliforniaRegion">#CaliforniaRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Winery@<a name="SantaCruzMountainVineyard">SantaCruzMountainVineyard</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;CabernetSauvignon@<a name="SantaCruzMountainVineyardCabernetSauvignon">SantaCruzMountainVineyardCabernetSauvignon</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#SantaCruzMountainsRegion">#SantaCruzMountainsRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#SantaCruzMountainVineyard">#SantaCruzMountainVineyard</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Strong">#Strong</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Full">#Full</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Region@<a name="CentralTexasRegion">CentralTexasRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#TexasRegion">#TexasRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Winery@<a name="StGenevieve">StGenevieve</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;WhiteWine@<a name="StGenevieveTexasWhite">StGenevieveTexasWhite</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#CentralTexasRegion">#CentralTexasRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#StGenevieve">#StGenevieve</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Region@<a name="SantaCruzMountainsRegion">SantaCruzMountainsRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#CaliforniaRegion">#CaliforniaRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Winery@<a name="SaucelitoCanyon">SaucelitoCanyon</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Zinfandel@<a name="SaucelitoCanyonZinfandel">SaucelitoCanyonZinfandel</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#ArroyoGrandeRegion">#ArroyoGrandeRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#SaucelitoCanyon">#SaucelitoCanyon</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Zinfandel@<a name="SaucelitoCanyonZinfandel1998">SaucelitoCanyonZinfandel1998</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#ArroyoGrandeRegion">#ArroyoGrandeRegion</a>&gt;</li>
+<li>hasVintageYear = &lt;_@<a href="#Year1998">#Year1998</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#SaucelitoCanyon">#SaucelitoCanyon</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Region@<a name="SauterneRegion">SauterneRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#BordeauxRegion">#BordeauxRegion</a>&gt;</li></ul></dd>
+<dt>&lt;WineGrape@<a name="SauvignonBlancGrape">SauvignonBlancGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Winery@<a name="SchlossRothermel">SchlossRothermel</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;SweetRiesling@<a name="SchlossRothermelTrochenbierenausleseRiesling">SchlossRothermelTrochenbierenausleseRiesling</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#GermanyRegion">#GermanyRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#SchlossRothermel">#SchlossRothermel</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Sweet">#Sweet</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Strong">#Strong</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Full">#Full</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Winery@<a name="SchlossVolrad">SchlossVolrad</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;SweetRiesling@<a name="SchlossVolradTrochenbierenausleseRiesling">SchlossVolradTrochenbierenausleseRiesling</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#GermanyRegion">#GermanyRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#SchlossVolrad">#SchlossVolrad</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Sweet">#Sweet</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Full">#Full</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Winery@<a name="SeanThackrey">SeanThackrey</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;PetiteSyrah@<a name="SeanThackreySiriusPetiteSyrah">SeanThackreySiriusPetiteSyrah</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#NapaRegion">#NapaRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#SeanThackrey">#SeanThackrey</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Strong">#Strong</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Full">#Full</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Winery@<a name="Selaks">Selaks</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;IceWine@<a name="SelaksIceWine">SelaksIceWine</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#NewZealandRegion">#NewZealandRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#Selaks">#Selaks</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+<li>hasColor = &lt;_@<a href="#White">#White</a>&gt;</li>
+</ul></dd>
+<dt>&lt;SauvignonBlanc@<a name="SelaksSauvignonBlanc">SelaksSauvignonBlanc</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#NewZealandRegion">#NewZealandRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#Selaks">#Selaks</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;WineGrape@<a name="SemillonGrape">SemillonGrape</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Winery@<a name="SevreEtMaine">SevreEtMaine</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Muscadet@<a name="SevreEtMaineMuscadet">SevreEtMaineMuscadet</a>&gt;</dt>
+<dd><ul compact><li>hasMaker = &lt;_@<a href="#SevreEtMaine">#SevreEtMaine</a>&gt;</li></ul></dd>
+<dt>&lt;Region@<a name="SonomaRegion">SonomaRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#CaliforniaRegion">#CaliforniaRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Region@<a name="SouthAustraliaRegion">SouthAustraliaRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#AustralianRegion">#AustralianRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Region@<a name="StEmilionRegion">StEmilionRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#BordeauxRegion">#BordeauxRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Winery@<a name="Stonleigh">Stonleigh</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;SauvignonBlanc@<a name="StonleighSauvignonBlanc">StonleighSauvignonBlanc</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#NewZealandRegion">#NewZealandRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#Stonleigh">#Stonleigh</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Delicate">#Delicate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Winery@<a name="Taylor">Taylor</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;Port@<a name="TaylorPort">TaylorPort</a>&gt;</dt>
+<dd><ul compact><li>hasMaker = &lt;_@<a href="#Taylor">#Taylor</a>&gt;</li></ul></dd>
+<dt>&lt;Region@<a name="ToursRegion">ToursRegion</a>&gt;</dt>
+<dd><ul compact><li>locatedIn = &lt;_@<a href="#LoireRegion">#LoireRegion</a>&gt;</li></ul></dd>
+<dt>&lt;Winery@<a name="Ventana">Ventana</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;CheninBlanc@<a name="VentanaCheninBlanc">VentanaCheninBlanc</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#CentralCoastRegion">#CentralCoastRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#Ventana">#Ventana</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#OffDry">#OffDry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;Winery@<a name="WhitehallLane">WhitehallLane</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;CabernetFranc@<a name="WhitehallLaneCabernetFranc">WhitehallLaneCabernetFranc</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#NapaRegion">#NapaRegion</a>&gt;</li>
+<li>hasMaker = &lt;_@<a href="#WhitehallLane">#WhitehallLane</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Dry">#Dry</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Moderate">#Moderate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Medium">#Medium</a>&gt;</li>
+</ul></dd>
+<dt>&lt;DessertWine@<a name="WhitehallLanePrimavera">WhitehallLanePrimavera</a>&gt;</dt>
+<dd><ul compact>
+<li>locatedIn = &lt;_@<a href="#NapaRegion">#NapaRegion</a>&gt;</li>
+<li>hasSugar = &lt;_@<a href="#Sweet">#Sweet</a>&gt;</li>
+<li>hasFlavor = &lt;_@<a href="#Delicate">#Delicate</a>&gt;</li>
+<li>hasBody = &lt;_@<a href="#Light">#Light</a>&gt;</li>
+</ul></dd>
+<dt>&lt;owl:AllDifferent@<a name=""></a>&gt;</dt>
+<dd><ul compact><li>owl:distinctMembers = <dt>&lt;vin:Winery@<a name="Bancroft">Bancroft</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="ChateauChevalBlanc">ChateauChevalBlanc</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="ChateauDYchem">ChateauDYchem</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="ChateauDeMeursault">ChateauDeMeursault</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="ChateauLafiteRothschild">ChateauLafiteRothschild</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="ChateauMargauxWinery">ChateauMargauxWinery</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="ChateauMorgon">ChateauMorgon</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="ClosDeLaPoussie">ClosDeLaPoussie</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="ClosDeVougeot">ClosDeVougeot</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="CongressSprings">CongressSprings</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="Corbans">Corbans</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="CortonMontrachet">CortonMontrachet</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="Cotturi">Cotturi</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="DAnjou">DAnjou</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="Elyse">Elyse</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="Forman">Forman</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="Foxen">Foxen</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="GaryFarrell">GaryFarrell</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="KalinCellars">KalinCellars</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="KathrynKennedy">KathrynKennedy</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="LaneTanner">LaneTanner</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="Longridge">Longridge</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="Marietta">Marietta</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="McGuinnesso">McGuinnesso</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="MountEdenVineyard">MountEdenVineyard</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="Mountadam">Mountadam</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="PageMillWinery">PageMillWinery</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="PeterMccoy">PeterMccoy</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="PulignyMontrachet">PulignyMontrachet</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="SantaCruzMountainVineyard">SantaCruzMountainVineyard</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="SaucelitoCanyon">SaucelitoCanyon</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="SchlossRothermel">SchlossRothermel</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="SchlossVolrad">SchlossVolrad</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="SeanThackrey">SeanThackrey</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="Selaks">Selaks</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="SevreEtMaine">SevreEtMaine</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="StGenevieve">StGenevieve</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="Stonleigh">Stonleigh</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="Taylor">Taylor</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="Ventana">Ventana</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+<dt>&lt;vin:Winery@<a name="WhitehallLane">WhitehallLane</a>&gt;</dt>
+<dd><ul compact></ul></dd>
+</li></ul></dd>
+</dl>
+<hr>
+<address>Generated by OWL2HTML</address>
+</body>
+</html>

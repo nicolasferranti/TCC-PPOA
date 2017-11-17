@@ -24,14 +24,14 @@
       <relation>=</relation>
     </Cell>
   </map>
-  <!--map>
+  <map>
     <Cell>
       <entity1 rdf:resource="http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#Address"/>
       <entity2 rdf:resource="http://oaei.ontologymatching.org/2007/benchmarks/202/onto.rdf#qzddj"/>
       <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
       <relation>=</relation>
     </Cell>
-  </map-->
+  </map>
   <map>
     <Cell>
       <entity1 rdf:resource="http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#key"/>

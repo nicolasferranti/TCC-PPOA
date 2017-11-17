@@ -34,6 +34,10 @@ public class PPConnectorUtil {
     String filePath;
     ArrayList<IFuncao> equacoes = new ArrayList<IFuncao>();
 
+    //nicolas
+    ArrayList<IFuncao> equacoesPP;
+
+
     public PPConnectorUtil(String filePath, List<OntResource> conceitosOnto1, List<OntResource> conceitosOnto2) {
         this.conceitosOnto1 = conceitosOnto1;
         this.conceitosOnto2 = conceitosOnto2;
@@ -51,9 +55,11 @@ public class PPConnectorUtil {
 
         //Tendo o resultado do AG, preciso passar os pesos encontrados para o MainContainer
         parserEquacoesToContainer(((FuncaoComposta) equacoes.get(0)).getFilhos(), (List) container.getContainer());
+//        parserEquacoesToContainer(((FuncaoComposta) equacoesPP.get(0)).getFilhos(), (List) container.getContainer());
 
     }
 
+    /// AQUI É ONDE É POPULADA A VARIAVEL EQUACOES que é passada na chamada ao PP
     private void parserContainerToEquacoes(Alignment prealign, FunctionContainer container, double[] resultadoDasEquacoes) throws AlignmentException, OWLException {
         int i = 0;
         for (Enumeration e = prealign.getElements(); e.hasMoreElements();) {
@@ -69,8 +75,12 @@ public class PPConnectorUtil {
 
     private void runAG(double[] resultadoDasEquacoes) {
         PresaPredador pp;
-        pp = new PresaPredador(new Gerador(equacoes, resultadoDasEquacoes), 40, 0.005);
-        pp.SimulaVida(100);
+        pp = new PresaPredador(new Gerador(equacoes, resultadoDasEquacoes), 50, 0.005);
+        pp.SimulaVida(100, true);
+        
+        /** < ideia: FAZER O PP RETORNAR UM OBJETO EQUAÇÕES COM PESOS E VALORES PREENCHIDOS PELO MELHOR INDIVIDUO>
+         **/
+        this.equacoesPP = pp.getEquacoes();
     }
 
     private void parserEquacoesToContainer(List<IFuncao> to, List<FunctionWeightVO> from) {
