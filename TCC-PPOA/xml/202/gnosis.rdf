@@ -13,9 +13,9 @@
   <map>
     <Cell>
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#day'/>
-      <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/202/onto.rdf#sdxsndxsqg'/>
+      <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/202/onto.rdf#zadsznad'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.0</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
     </Cell>
   </map>
   <map>
@@ -55,7 +55,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#year'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/202/onto.rdf#zdsnzsdh'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.0</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
     </Cell>
   </map>
   <map>
@@ -183,7 +183,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#state'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/202/onto.rdf#zdnzadh'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.0</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
     </Cell>
   </map>
   <map>
@@ -199,7 +199,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#lastName'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/202/onto.rdf#lastName'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.0</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
     </Cell>
   </map>
   <map>
@@ -343,7 +343,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#month'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/202/onto.rdf#asndzsd'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.0</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
     </Cell>
   </map>
   <map>
@@ -519,7 +519,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#shortName'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/202/onto.rdf#dsza'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.0</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
     </Cell>
   </map>
   <map>
@@ -581,7 +581,7 @@
   <map>
     <Cell>
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#affiliation'/>
-      <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/202/onto.rdf#zadsznad'/>
+      <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/202/onto.rdf#sdxsndxsqg'/>
       <relation>=</relation>
       <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
     </Cell>
@@ -623,7 +623,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#name'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/202/onto.rdf#dszabdza'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.0</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
     </Cell>
   </map>
   <map>
@@ -639,7 +639,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#city'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/202/onto.rdf#zdzndh'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.0</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
     </Cell>
   </map>
   <map>

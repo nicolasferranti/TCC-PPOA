@@ -32,32 +32,32 @@ http://oaei.ontologymatching.org/2007/benchmarks/222/onto.rdf#city
 
 
 
-Funcao1=similarity.structure.ConceptNameSimilarity@4b1c3387
+Funcao1=similarity.structure.ConceptNameSimilarity@54856bcf
 Peso1=0.0
 
-Funcao2=similarity.structure.DirectIndividualSimilarity@30aecd3c
+Funcao2=similarity.structure.DirectIndividualSimilarity@2de8e6c1
 Peso2=0.0
 
-Funcao3=similarity.structure.CommentTokenSimilarity@2ea7af25
+Funcao3=similarity.structure.CommentTokenSimilarity@36d3f763
 Peso3=1.0
 
 Funcao4=class similarity.FunctionContainer@FuncoesHierarquia
 Peso4=0.0
 
-Funcao5=similarity.structure.DirectSuperClassSimilarity@6259cd6
-Peso5=0.045
+Funcao5=similarity.structure.DirectSuperClassSimilarity@105b844d
+Peso5=0.4
 
-Funcao6=similarity.structure.DirectSubClassSimilarity@2c0f079e
-Peso6=0.94
+Funcao6=similarity.structure.DirectSubClassSimilarity@6fff4e9a
+Peso6=0.45
 
 Funcao5=class similarity.FunctionContainer@FuncoesPropriedades
 Peso5=0.0
 
-Funcao6=similarity.structure.DirectPropertybyRangeDomainSimilarity@6a0ee80e
-Peso6=0.295
+Funcao6=similarity.structure.DirectPropertybyRangeDomainSimilarity@5cb734a
+Peso6=0.84
 
-Funcao7=similarity.structure.DirectPropertybyNameSimilarity@79c3aced
-Peso7=0.445
+Funcao7=similarity.structure.DirectPropertybyNameSimilarity@2c8ae47f
+Peso7=0.015
 
 ############################
 #Similaridade dos recursos

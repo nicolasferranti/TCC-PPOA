@@ -42,15 +42,15 @@ public class BuscaLocal {
             //BigDecimal fitnessTotal = avaliaPopulacao();
             fazDiversificacaoIntensificacao(populacao, gerador, Granularidade);
             _vencedor = populacao.get(0);
-
+            return _vencedor;
             //Printer.imprimeFim(populacao.get(0));
         } while (vencedorAntigo != _vencedor);
 
         //System.out.println("Número de gerações utilizadas no GRASP: " + nGer);
         //retorna a equacoes já alteradas
-        Equacao.getEquacoesComPesos(gerador.getEquacoes(), populacao.get(0));
+        //Equacao.getEquacoesComPesos(gerador.getEquacoes(), populacao.get(0));
 
-        return populacao.get(0);
+        //return populacao.get(0);
     }
 
     private static void fazDiversificacaoIntensificacao(List<Cromossomo> populacao, Gerador gerador, double Granularidade) {

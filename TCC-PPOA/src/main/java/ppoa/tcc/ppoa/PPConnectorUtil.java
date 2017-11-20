@@ -76,7 +76,7 @@ public class PPConnectorUtil {
     private void runAG(double[] resultadoDasEquacoes) {
         PresaPredador pp;
         pp = new PresaPredador(new Gerador(equacoes, resultadoDasEquacoes), 50, 0.005);
-        pp.SimulaVida(100, true);
+        pp.SimulaVida(100, false);
         
         /** < ideia: FAZER O PP RETORNAR UM OBJETO EQUAÇÕES COM PESOS E VALORES PREENCHIDOS PELO MELHOR INDIVIDUO>
          **/
