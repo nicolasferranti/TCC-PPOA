@@ -54,8 +54,8 @@ public class PPConnectorUtil {
         runAG(resultadoDasEquacoes);
 
         //Tendo o resultado do AG, preciso passar os pesos encontrados para o MainContainer
-        parserEquacoesToContainer(((FuncaoComposta) equacoes.get(0)).getFilhos(), (List) container.getContainer());
-//        parserEquacoesToContainer(((FuncaoComposta) equacoesPP.get(0)).getFilhos(), (List) container.getContainer());
+        //parserEquacoesToContainer(((FuncaoComposta) equacoes.get(0)).getFilhos(), (List) container.getContainer());
+        parserEquacoesToContainer(((FuncaoComposta) equacoesPP.get(0)).getFilhos(), (List) container.getContainer());
 
     }
 
@@ -75,8 +75,8 @@ public class PPConnectorUtil {
 
     private void runAG(double[] resultadoDasEquacoes) {
         PresaPredador pp;
-        pp = new PresaPredador(new Gerador(equacoes, resultadoDasEquacoes), 50, 0.005);
-        pp.SimulaVida(100, false);
+        pp = new PresaPredador(new Gerador(equacoes, resultadoDasEquacoes), 10, 0.005);
+        pp.SimulaVida(200, false);
         
         /** < ideia: FAZER O PP RETORNAR UM OBJETO EQUAÇÕES COM PESOS E VALORES PREENCHIDOS PELO MELHOR INDIVIDUO>
          **/

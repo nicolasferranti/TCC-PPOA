@@ -15,7 +15,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#day'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/204/onto.rdf#day'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.5824999809265137</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.5024999976158142</measure>
     </Cell>
   </map>
   <map>
@@ -31,7 +31,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#isPartOf'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/204/onto.rdf#is_part_of'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9953951239585876</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9998604655265808</measure>
     </Cell>
   </map>
   <map>
@@ -47,7 +47,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#proceedings'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/204/onto.rdf#proceedings'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9953736066818237</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9998598098754883</measure>
     </Cell>
   </map>
   <map>
@@ -55,7 +55,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#year'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/204/onto.rdf#year'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.5824999809265137</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.5024999976158142</measure>
     </Cell>
   </map>
   <map>
@@ -127,7 +127,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#address'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/204/onto.rdf#address'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9809615015983582</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.999423086643219</measure>
     </Cell>
   </map>
   <map>
@@ -183,7 +183,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#state'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/204/onto.rdf#state'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.5824999809265137</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.5024999976158142</measure>
     </Cell>
   </map>
   <map>
@@ -199,7 +199,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#lastName'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/204/onto.rdf#lastName'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.5824999809265137</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.5024999976158142</measure>
     </Cell>
   </map>
   <map>
@@ -255,7 +255,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#journal'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/204/onto.rdf#journal'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9954037666320801</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9998607039451599</measure>
     </Cell>
   </map>
   <map>
@@ -263,7 +263,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#date'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/204/onto.rdf#date'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9843786358833313</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9995266199111938</measure>
     </Cell>
   </map>
   <map>
@@ -287,7 +287,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#Proceedings'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/204/onto.rdf#Proc.'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.35055553913116455</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.22611111402511597</measure>
     </Cell>
   </map>
   <map>
@@ -343,7 +343,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#month'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/204/onto.rdf#month'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.5824999809265137</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.5024999976158142</measure>
     </Cell>
   </map>
   <map>
@@ -375,7 +375,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#event'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/204/onto.rdf#event'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9953026175498962</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9998576641082764</measure>
     </Cell>
   </map>
   <map>
@@ -391,7 +391,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#publisher'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/204/onto.rdf#publisher'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9953951239585876</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9998604655265808</measure>
     </Cell>
   </map>
   <map>
@@ -447,7 +447,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#pages'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/204/onto.rdf#pages'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9809615015983582</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.999423086643219</measure>
     </Cell>
   </map>
   <map>
@@ -511,7 +511,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#editor'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/204/onto.rdf#editor'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9809615015983582</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.999423086643219</measure>
     </Cell>
   </map>
   <map>
@@ -519,7 +519,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#shortName'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/204/onto.rdf#short_name'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.5824999809265137</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.5024999976158142</measure>
     </Cell>
   </map>
   <map>
@@ -527,7 +527,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#book'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/204/onto.rdf#book'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9954166412353516</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9998611211776733</measure>
     </Cell>
   </map>
   <map>
@@ -543,7 +543,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#location'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/204/onto.rdf#location'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9809615015983582</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.999423086643219</measure>
     </Cell>
   </map>
   <map>
@@ -599,7 +599,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#author'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/204/onto.rdf#author'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9835000038146973</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9994999766349792</measure>
     </Cell>
   </map>
   <map>
@@ -623,7 +623,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#name'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/204/onto.rdf#name'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.5824999809265137</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.5024999976158142</measure>
     </Cell>
   </map>
   <map>
@@ -639,7 +639,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#city'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/204/onto.rdf#city'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.5824999809265137</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.5024999976158142</measure>
     </Cell>
   </map>
   <map>
@@ -783,7 +783,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#humanCreator'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/204/onto.rdf#human_creator'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9705768823623657</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9991083741188049</measure>
     </Cell>
   </map>
 </Alignment>

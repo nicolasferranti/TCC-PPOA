@@ -223,7 +223,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#Reference'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/228/onto.rdf#Reference'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.03500000014901161</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.004999999888241291</measure>
     </Cell>
   </map>
   <map>

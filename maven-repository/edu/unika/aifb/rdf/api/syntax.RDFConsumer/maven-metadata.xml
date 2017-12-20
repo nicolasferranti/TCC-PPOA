@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>edu.unika.aifb.rdf.api</groupId>
+  <artifactId>syntax.RDFConsumer</artifactId>
+  <version>1.0</version>
+  <versioning>
+    <versions>
+      <version>1.0</version>
+    </versions>
+    <lastUpdated>20171115164134</lastUpdated>
+  </versioning>
+</metadata>

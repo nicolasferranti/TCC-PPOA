@@ -31,7 +31,7 @@ public class PresaPredador {
     private ArrayPesosGranulares pesos;
     private double granularidade;
     private int tamPop;
-    private double CHANCE_TO_FOLLOW = 0.2;
+    private double CHANCE_TO_FOLLOW = 0.5;
 
     private double EpsonDiff = 0.00000000001;
 
@@ -39,14 +39,14 @@ public class PresaPredador {
      * constantes do cálculo da direção se N é usado, então Tau nao é.
      */
     private double N = 1.01;
-    private double Tau = 0.09;
+    private double Tau = 0.1;
 
     // constantes do cáculo do passo
     private double LambdaMAX = 20;
     private double LambdaMIN = 1;
     //random entre 0 e 1 
     private double Eps;
-    private double Beta = 0; // paper colocou Beta=1 e w=1
+    private double Beta = 1; // paper colocou Beta=1 e w=1
     private double w = 1;
 
     // melhor presa 
@@ -70,7 +70,7 @@ public class PresaPredador {
 
     public void SimulaVida(int iteracoes, boolean doLocalSearch) {
         ordenaPorFitness();
-
+        printPopulationDiff();
         this.bestIndividual = this.pop.get(0).clone();
         avaliaCromossomoDiferenca(bestIndividual, gerador);
 
@@ -79,12 +79,12 @@ public class PresaPredador {
 
         List<Cromossomo> newPopulation;
 
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 10; i++) {
             System.out.println("Ciclo " + (i + 1));
             // começa gerações
             try {
                 for (int iterat = 0; iterat < iteracoes && bestIndividual.getDiferenca().doubleValue() > EpsonDiff; iterat++) {
-                    System.out.println("BEST (" + iterat + ") :" + this.pop.get(0).getDiferenca());
+                    //System.out.println("BEST (" + iterat + ") :" + this.pop.get(0).getDiferenca());
                     /**
                      * <
                      * Ideia: 1 fazer presas andarem (fugindo ou seguindo)
@@ -110,6 +110,7 @@ public class PresaPredador {
                             avaliaCromossomoDiferenca(newIt, gerador);
                             newPopulation.add(newIt);
                         }
+
                     }
 
                     /* MOVE PREDATOR. */
@@ -117,20 +118,22 @@ public class PresaPredador {
                     avaliaCromossomoDiferenca(newPredator, gerador);
                     newPopulation.add(newPredator);
 
-                                System.out.println("GRASP in:" + this.pop.get(0).getDiferenca());
-                                bestAfterGRASP = BuscaLocal.runGRASP2(pop, gerador, granularidade);
-                                avaliaCromossomoDiferenca(bestAfterGRASP, gerador);
-                                newPopulation.add(bestAfterGRASP);
-                                System.out.println("GRASP in:" + bestAfterGRASP.getDiferenca());
-                    
-                                /**
-                                 * se a diferença que o melhor idividuo tinha for maior que a do
-                                 * novo depois do GRASP, atualizar o melhor individuo.
-                                 */
-                                if (this.bestIndividual.getDiferenca().compareTo(bestAfterGRASP.getDiferenca()) > 0) {
-                                    this.bestIndividual = bestAfterGRASP;
-                                }
+                    //System.out.println("GRASP in:" + this.pop.get(0).getDiferenca());
+                    bestAfterGRASP = BuscaLocal.runGRASP2(pop, gerador, granularidade);
+                    avaliaCromossomoDiferenca(bestAfterGRASP, gerador);
+                    newPopulation.add(bestAfterGRASP);
+                    //System.out.println("GRASP out:" + bestAfterGRASP.getDiferenca());
+
+                    /**
+                     * se a diferença que o melhor idividuo tinha for maior que
+                     * a do novo depois do GRASP, atualizar o melhor individuo.
+                     */
+                    //if (this.bestIndividual.getDiferenca().compareTo(bestAfterGRASP.getDiferenca()) > 0) {
+                    if (this.bestIndividual.getDiferenca().compareTo(bestAfterGRASP.getDiferenca()) > 0) {
+                        this.bestIndividual = bestAfterGRASP;
+                    }
                     this.pop = newPopulation;
+                    
                     ordenaPorFitness();
 
                     /*
@@ -142,8 +145,9 @@ public class PresaPredador {
                         System.out.println("------");
                         //this.pop.add(0, bestAfterGRASP);
                     }
-                    */
+                     */
                 }
+                printPopulationDiff();
             } catch (NumberFormatException ex) {
                 System.out.println("NumberFormatException. Aborting ...");
             }
@@ -164,10 +168,13 @@ public class PresaPredador {
                     this.bestIndividual = bestAfterGRASP;
                 }
             } else // atualizo o melhor individuo a cada ciclo
-             if (this.bestIndividual.getDiferenca().compareTo(this.pop.get(0).getDiferenca()) > 0) {
+            {
+                if (this.bestIndividual.getDiferenca().compareTo(this.pop.get(0).getDiferenca()) > 0) {
                     this.bestIndividual = this.pop.get(0).clone();
                     avaliaCromossomoDiferenca(bestIndividual, gerador);
                 }
+            }
+
             //cria novos parâmetros iniciais
             this.pop = this.gerador.criaPopulacao(this.tamPop, pesos);
             for (Cromossomo c : pop) {
@@ -185,6 +192,19 @@ public class PresaPredador {
             System.out.print(g.getValor() + " ");
         }
         System.out.println("");
+    }
+
+    private void printPopulationDiff() {
+        System.out.println("---------START PRINT--------");
+        for (int i = 0; i < this.tamPop; i++) {
+            System.out.print(this.pop.get(i).getDiferenca() + " (");
+            for (Gene g : this.pop.get(i).genes) {
+                System.out.print(g.getValor() + "\t");
+            }
+            System.out.print(")");
+            System.out.println("");
+        }
+        System.out.println("---------FINISH PRINT--------");
     }
 
 
@@ -267,6 +287,7 @@ public class PresaPredador {
         double d1, d2;
         double sumSquareD1 = 0;
         double sumSquareD2 = 0;
+        double sumSquareFinal = 0;
 
         for (int i = 0; i < this.gerador.getNumeroDeGenes(); i++) {
             sumSquareD1 += pow(predador.genes.get(i).getValor() - (presa.genes.get(i).getValor() + direcaoY[i].getValor()), 2);
@@ -283,6 +304,14 @@ public class PresaPredador {
             }
         } else {
             direcaoFinal = direcaoY;
+        }
+
+        for (int i = 0; i < this.gerador.getNumeroDeGenes(); i++) {
+            sumSquareFinal += pow(direcaoFinal[i].getValor(), 2);
+        }
+        sumSquareFinal = Math.sqrt(sumSquareFinal);
+        for (int i = 0; i < this.gerador.getNumeroDeGenes(); i++) {
+            direcaoFinal[i].replaceValor(direcaoFinal[i].getValor() / sumSquareFinal);
         }
 
         double passos = this.getPassos(indice);
@@ -313,15 +342,15 @@ public class PresaPredador {
         // indice > 0 porque a melhor presa não caminha
         if (indice > 0 && indice < this.pop.size()) {
             // para cada presa cuja sobrevivencia é melhor que a minha
+            //int j = indice-1;
             for (int j = 0; j < indice; j++) {
                 //double NexpDivDist = pow(N, this.getSurvivorValue(j).doubleValue()) / distanciaEuclidiana(this.pop.get(indice), this.pop.get(j));
                 //BigDecimal NexpDivDist = new BigDecimal(Math.exp(pow(this.getSurvivorValue(j).doubleValue(), this.Tau) - distanciaEuclidiana(this.pop.get(indice), this.pop.get(j))));
                 distancia = distanciaEuclidiana(this.pop.get(indice), this.pop.get(j));
-                pow = pow(this.getSurvivorValue(j).doubleValue(), this.Tau);
+                pow = Math.pow(this.getSurvivorValue(j).doubleValue(), this.Tau);
                 double NexpDivDist = Math.exp(pow - distancia);
                 //System.out.println("dist :" + distancia + "| pow :" + pow + "| Nexp :" + NexpDivDist);
 
-                
                 for (int geneIterator = 0; geneIterator < this.gerador.getNumeroDeGenes(); geneIterator++) {
                     double Xj = this.pop.get(j).genes.get(geneIterator).getValor();
                     double Xi = this.pop.get(indice).genes.get(geneIterator).getValor();
@@ -342,7 +371,7 @@ public class PresaPredador {
         sumSquare = Math.sqrt(sumSquare);
 //        System.out.println("-------------");
 //        System.out.print("Old Direction: ");
-//
+
         for (int geneIterator = 0; geneIterator < this.gerador.getNumeroDeGenes(); geneIterator++) {
 //            System.out.print(direcao[geneIterator].getValor() + " ");
             direcao[geneIterator].replaceValor(direcao[geneIterator].getValor() / sumSquare);
@@ -371,11 +400,14 @@ public class PresaPredador {
         //        System.out.println("Nova direção:");
         Cromossomo it = this.pop.get(indice);
         Cromossomo newIt = it.clone();
+        //System.out.println("FOLLOW Steps : old(new)");
+        //System.out.println("Passos :" + passos);
         for (int geneIterator = 0; geneIterator < it.getNumeroDeGenes(); geneIterator++) {
             //it.genes.get(geneIterator).addValor(direcao[geneIterator].getValor() * passos);
+            //System.out.print(direcao[geneIterator].getValor() + "(" + direcao[geneIterator].getValor() * passos + ")");
             newIt.genes.get(geneIterator).replaceValor(direcao[geneIterator].getValor() * passos);
-            //System.out.print(it.genes.get(geneIterator).getValor() + " ");
         }
+        //System.out.println("---- EOFS ----");
         return newIt;
         /**
          * System.out.println("---------"); System.out.println("Old SV:" +
@@ -402,13 +434,14 @@ public class PresaPredador {
      * <DONE AND TESTED>
      */
     private double getPassos(int cromossomoI) {
-        this.Eps = Math.random();
+        this.Eps = Math.random() * 100;
         BigDecimal SVcromI = this.getSurvivorValue(cromossomoI);
         BigDecimal SVpredator = this.getSurvivorValue(this.tamPop - 1);
         //System.out.println("SVC :"+SVcromI + "|| SVP :"+SVpredator);
         BigDecimal diffSV = SVcromI.subtract(SVpredator, MathContext.DECIMAL128);
         double denominador = Math.exp(this.Beta * pow(Math.abs(diffSV.doubleValue()), this.w));
-        return (this.LambdaMAX * this.Eps * this.granularidade) / denominador;
+//        System.out.println("passos: "+ ((this.LambdaMAX * this.Eps * this.granularidade) / denominador) );
+        return Math.nextUp((this.LambdaMAX * this.Eps * this.granularidade) / denominador);
     }
 
     /**

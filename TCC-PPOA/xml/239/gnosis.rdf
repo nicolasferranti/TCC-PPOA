@@ -199,7 +199,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#day'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/239/onto.rdf#lastName'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.5024999976158142</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.5400000214576721</measure>
     </Cell>
   </map>
   <map>
@@ -215,7 +215,7 @@
       <entity1 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/101/onto.rdf#Reference'/>
       <entity2 rdf:resource='http://oaei.ontologymatching.org/2007/benchmarks/239/onto.rdf#Reference'/>
       <relation>=</relation>
-      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9950000047683716</measure>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.9200000166893005</measure>
     </Cell>
   </map>
   <map>
